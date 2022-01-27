@@ -1,10 +1,10 @@
 require('./bootstrap');
 
-import {createApp} from 'vue';
+import { createApp } from 'vue';
 import CButton from './components/CButton';
 
 createApp({
-    components:{
-    'c-button': CButton,
-    }
+    components: {
+        'c-button': CButton,
+    },
 }).mount('#app');

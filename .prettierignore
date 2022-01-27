@@ -1,0 +1,11 @@
+# Ignore artifacts:
+coverage
+node_modules
+vendor
+composer.json
+composer.lock
+package.json
+package-lock.json
+README.md
+public
+.styleci.yml
