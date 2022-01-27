@@ -6,12 +6,7 @@ use Tests\TestCase;
 
 class WelcomeTest extends TestCase
 {
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
-    public function test_example()
+    public function testWelcomeViewIsAccessible()
     {
         $response = $this->get('/');
 
