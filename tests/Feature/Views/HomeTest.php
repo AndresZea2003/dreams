@@ -10,6 +10,6 @@ class HomeTest extends TestCase
     {
         $response = $this->get(route('home'));
 
-        $response->assertStatus(200);
+        $response->assertStatus(302);
     }
 }
