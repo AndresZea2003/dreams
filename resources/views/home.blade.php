@@ -2,9 +2,11 @@
 
 @section('main')
 <div class="flex flex-col h-full bg-gray-300">
-    <div class="bg-gray-500 text-6xl">
+    <nav class="bg-gray-500 text-6xl flex justify-between items-cente">
         <h1>Home</h1>
-    </div>
+        <dropdown name='{{ auth()->user()->name }}'></dropdown>
+    </nav>
+
     <div class="mt-5 ">
         <form action="{{route('logout')}}" method="POST">
             @csrf

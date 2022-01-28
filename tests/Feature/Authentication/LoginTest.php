@@ -16,7 +16,7 @@ class LoginTest extends TestCase
     {
         $response = $this->get(route('login'));
 
-        $response->assertStatus(200);
+        $response->assertOk();
     }
     public function testGuestCannotLogin(): void
     {
@@ -26,7 +26,7 @@ class LoginTest extends TestCase
         ]);
         $response->assertSessionHasErrors(['email']);
     }
-    public function testAuthenticatedUsersCanLogin(): void
+    public function testAUserCanLogin(): void
     {
         $user = User::factory()->create();
 
@@ -38,4 +38,3 @@ class LoginTest extends TestCase
         $response->assertRedirect(RouteServiceProvider::HOME);
     }
 }
-//    public function testAnUnverifiedUserIsRedirectedToVerifyEmail()

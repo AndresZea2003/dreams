@@ -9,6 +9,7 @@
 </head>
 <body>
 <main class="h-screen w-screen" id="app">
+    <app csrf={{csrf_token()}} :routes="{{json_encode(Route::getRoutes()->compile())}}"></app>
     @yield('main')
 </main>
 
