@@ -16,8 +16,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+})->middleware(['guest']);
+
+Route::group(['middleware' => ['auth', 'verified']], function () {
+    Route::View('/home', 'home')->name('home');
+
+    Route::View('/profile', 'profile')->name('profile');
 });
 
-Route::view('/home', 'home')->middleware(['auth', 'verified'])->name('home');
+Route::group(['middleware' => ['auth', 'verified', 'role:admin']], function () {
+    Route::view('panel', 'panel')->name('panel');
 
-Route::resource('user', UserController::class);
+    Route::resource('users', UserController::class);
+});

@@ -14,6 +14,15 @@ class EmailVerificationTest extends TestCase
 {
     use RefreshDatabase;
 
+    public function setUp(): void
+    {
+        parent::setUp();
+
+        $this->artisan('db:seed');
+
+        $this->app->make(\Spatie\Permission\PermissionRegistrar::class)->registerPermissions();
+    }
+
     public function testVerifyEmailViewIsAccessible(): void
     {
         $user = User::factory()->create([

@@ -25,7 +25,8 @@
                 >
                     <div class="px-1 py-1">
                         <MenuItem v-slot="{ active }">
-                            <button
+                            <a
+                                :href="profileRoute"
                                 :class="[
                                     active ? 'bg-violet-500 text-white' : 'text-gray-900',
                                     'group flex w-full items-center rounded-md px-2 py-2 text-sm',
@@ -37,10 +38,11 @@
                                     aria-hidden="true"
                                 />
                                 Profile
-                            </button>
+                            </a>
                         </MenuItem>
-                        <MenuItem v-slot="{ active }">
-                            <button
+                        <MenuItem v-if="panelRoute" v-slot="{ active }">
+                            <a
+                                :href="panelRoute"
                                 :class="[
                                     active ? 'bg-violet-500 text-white' : 'text-gray-900',
                                     'group flex w-full items-center rounded-md px-2 py-2 text-sm',
@@ -52,7 +54,7 @@
                                     aria-hidden="true"
                                 />
                                 Panel
-                            </button>
+                            </a>
                         </MenuItem>
                     </div>
                     <div class="px-1 py-1">
@@ -86,6 +88,8 @@ import { ChevronDownIcon, LogoutIcon, UserCircleIcon, PresentationChartBarIcon }
 export default {
     props: {
         name: { type: String, required: true },
+        profileRoute: { type: String, required: true },
+        panelRoute: { type: String, required: true },
     },
     components: {
         Menu,
@@ -99,6 +103,7 @@ export default {
         CsrfToken,
     },
     setup() {
+        console.log(routes.value);
         return { routes };
     },
 };

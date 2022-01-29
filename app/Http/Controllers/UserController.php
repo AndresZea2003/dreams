@@ -9,7 +9,7 @@ class UserController extends Controller
 {
     public function index()
     {
-        $users = User::collection(User::paginate(10))->toArray();
+        $users = User::paginate(10)->toArray();
 
         return view('users.index', compact('users'));
     }

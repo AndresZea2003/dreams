@@ -10,9 +10,9 @@ class RolesAndPermissionsSeeder extends Seeder
 {
     public function run()
     {
-        $admin = Role::create(['name' => 'Admin']);
+        $admin = Role::create(['name' => 'admin']);
 
-        $user = Role::create(['name' => 'User']);
+        $user = Role::create(['name' => 'user']);
 
         $permission = Permission::create(['name' => 'profile'])->syncRoles([$admin, $user]);
         $permission = Permission::create(['name' => 'profile.dates'])->syncRoles([$admin, $user]);
