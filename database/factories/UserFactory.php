@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
@@ -34,6 +35,14 @@ class UserFactory extends Factory
             return [
                 'email_verified_at' => null,
             ];
+        });
+    }
+    public function configure()
+    {
+        return $this->afterMaking(function (User $user) {
+            $user->assignRole('user');
+        })->afterCreating(function (User $user) {
+            //
         });
     }
 }

@@ -29,7 +29,7 @@ class WelcomeTest extends TestCase
     }
     public function testAUserIsRedirectedToHomeWhenTryingToEnterWelcome(): void
     {
-        $response = $this->actingAs(User::factory()->create()->assignRole('user'))->get(self::URL);
+        $response = $this->actingAs(User::factory()->create())->get(self::URL);
 
         $response->assertRedirect(RouteServiceProvider::HOME);
     }

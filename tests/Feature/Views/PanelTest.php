@@ -22,7 +22,7 @@ class PanelTest extends TestCase
     }
     public function testAUserCannotSeePanel()
     {
-        $response = $this->actingAs(User::factory()->create()->assignRole('user'))->get(self::URL);
+        $response = $this->actingAs(User::factory()->create())->get(self::URL);
 
         $response->assertStatus(403);
     }
@@ -36,6 +36,6 @@ class PanelTest extends TestCase
     {
         $response = $this->get(self::URL);
 
-        $response->assertStatus(403);
+        $response->assertStatus(302);
     }
 }

@@ -28,7 +28,7 @@ class IndexTest extends TestCase
     }
     public function testAnUserCannotSeeTheUsersView(): void
     {
-        $response = $this->actingAs(User::factory()->create()->assignRole('user'))->get(self::URL);
+        $response = $this->actingAs(User::factory()->create())->get(self::URL);
 
         $response->assertStatus(403);
     }
@@ -36,6 +36,6 @@ class IndexTest extends TestCase
     {
         $response = $this->get(self::URL);
 
-        $response->assertStatus(403);
+        $response->assertStatus(302);
     }
 }

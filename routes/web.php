@@ -28,4 +28,6 @@ Route::group(['middleware' => ['auth', 'verified', 'role:admin']], function () {
     Route::view('panel', 'panel')->name('panel');
 
     Route::resource('users', UserController::class);
+
+    Route::patch('users/{user}/toggle-status', [UserController::class, 'toggle'])->name('user-status.toggle');
 });

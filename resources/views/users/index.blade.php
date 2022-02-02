@@ -1,5 +1,5 @@
 @extends('Layouts.nav-bar')
 
 @section('content')
-    Users table
+     <users-table :users="{{json_encode($users['data'])}}" :current="{{ auth()->user()->id }}"></users-table>
 @endsection
