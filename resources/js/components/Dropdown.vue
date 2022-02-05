@@ -2,14 +2,14 @@
     <div>
         <Menu as="div" class="relative inline-block text-left">
             <div>
-                <MenuButton
-                    class="inline-flex w-full justify-center rounded-md bg-black bg-opacity-20 px-4 py-2 text-sm font-medium text-white hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75"
-                >
-                    {{ name }}
-                    <ChevronDownIcon
-                        class="ml-2 -mr-1 h-5 w-5 text-violet-200 hover:text-violet-100"
-                        aria-hidden="true"
-                    />
+                <MenuButton>
+                    <button>
+                        <img
+                            class="h-15 w-15 rounded-full hover:opacity-80"
+                            :src="`https://ui-avatars.com/api/?name=${name}&background=d1d5db&color=000&size=50&bold=true`"
+                            alt="Avatar"
+                        />
+                    </button>
                 </MenuButton>
             </div>
             <transition
@@ -25,34 +25,28 @@
                 >
                     <div class="px-1 py-1">
                         <MenuItem v-slot="{ active }">
-                            <button
+                            <a
+                                :href="profileRoute"
                                 :class="[
-                                    active ? 'bg-violet-500 text-white' : 'text-gray-900',
+                                    active ? 'bg-zinc-800 text-white' : 'text-gray-900',
                                     'group flex w-full items-center rounded-md px-2 py-2 text-sm',
                                 ]"
                             >
-                                <UserCircleIcon
-                                    :active="active"
-                                    class="mr-2 h-5 w-5 text-violet-400"
-                                    aria-hidden="true"
-                                />
+                                <UserCircleIcon :active="active" class="mr-2 h-5 w-5" aria-hidden="true" />
                                 Profile
-                            </button>
+                            </a>
                         </MenuItem>
-                        <MenuItem v-slot="{ active }">
-                            <button
+                        <MenuItem v-if="panelRoute" v-slot="{ active }">
+                            <a
+                                :href="panelRoute"
                                 :class="[
-                                    active ? 'bg-violet-500 text-white' : 'text-gray-900',
+                                    active ? 'bg-zinc-800 text-white' : 'text-gray-900',
                                     'group flex w-full items-center rounded-md px-2 py-2 text-sm',
                                 ]"
                             >
-                                <PresentationChartBarIcon
-                                    :active="active"
-                                    class="mr-2 h-5 w-5 text-violet-400"
-                                    aria-hidden="true"
-                                />
+                                <PresentationChartBarIcon :active="active" class="mr-2 h-5 w-5" aria-hidden="true" />
                                 Panel
-                            </button>
+                            </a>
                         </MenuItem>
                     </div>
                     <div class="px-1 py-1">
@@ -61,11 +55,11 @@
                                 type="submit"
                                 form="logout"
                                 :class="[
-                                    active ? 'bg-violet-500 text-white' : 'text-gray-900',
+                                    active ? 'bg-red-400 text-white' : 'text-gray-900',
                                     'group flex w-full items-center rounded-md px-2 py-2 text-sm',
                                 ]"
                             >
-                                <LogoutIcon :active="active" class="mr-2 h-5 w-5 text-violet-400" aria-hidden="true" />
+                                <LogoutIcon :active="active" class="mr-2 h-5 w-5" aria-hidden="true" />
                                 Logout
                             </button>
                         </MenuItem>
@@ -81,11 +75,13 @@
 import CsrfToken from './helpers/CsrfToken';
 import { routes } from '../use';
 import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue';
-import { ChevronDownIcon, LogoutIcon, UserCircleIcon, PresentationChartBarIcon } from '@heroicons/vue/solid';
+import { ChevronDownIcon, LogoutIcon, UserCircleIcon, PresentationChartBarIcon, UserIcon } from '@heroicons/vue/solid';
 
 export default {
     props: {
         name: { type: String, required: true },
+        profileRoute: { type: String, required: true },
+        panelRoute: { type: String, required: true },
     },
     components: {
         Menu,
@@ -96,9 +92,11 @@ export default {
         LogoutIcon,
         UserCircleIcon,
         PresentationChartBarIcon,
+        UserIcon,
         CsrfToken,
     },
     setup() {
+        console.log(routes.value);
         return { routes };
     },
 };
