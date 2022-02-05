@@ -2,9 +2,6 @@
 
 namespace App\Http\Middleware;
 
-use Closure;
-use Illuminate\Http\Request;
-
 class RedirectIfEnabled
 {
     public function handle($request, $next)
@@ -13,6 +10,6 @@ class RedirectIfEnabled
             return redirect('home');
         }
 
-       return $next($request);
+        return $next($request);
     }
 }

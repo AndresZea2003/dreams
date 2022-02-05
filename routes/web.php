@@ -3,33 +3,19 @@
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+Route::view('/', 'welcome')->middleware('guest')->name('welcome');
 
-Route::get('/', function () {
-    return view('welcome');
-})->middleware(['guest']);
+Route::group(['middleware' => ['auth', 'verified']], function () {
+    Route::view('/user-disabled', 'auth.user-disabled')->middleware('user.disabled')->name('user-disabled');
 
-Route::group(['middleware' => ['auth', 'verified', 'user.enabled']], function () {
-    Route::View('/home', 'home')->name('home');
+    Route::group(['middleware' => ['user.enabled']], function () {
+        Route::view('/home', 'home')->name('home');
+        Route::view('/profile', 'profile')->name('profile');
 
-    Route::View('/profile', 'profile')->name('profile');
+        Route::group(['middleware' => ['role:admin']], function () {
+            Route::view('panel', 'panel')->name('panel');
+            Route::resource('users', UserController::class);
+            Route::patch('users/{user}/toggle-status', [UserController::class, 'toggle'])->name('user-status.toggle');
+        });
+    });
 });
-
-Route::group(['middleware' => ['auth', 'verified', 'role:admin', 'user.enabled']], function () {
-    Route::view('panel', 'panel')->name('panel');
-
-    Route::resource('users', UserController::class);
-
-    Route::patch('users/{user}/toggle-status', [UserController::class, 'toggle'])->name('user-status.toggle');
-});
-
- Route::View('/user-disabled', 'auth.user-disabled')->middleware('user.disabled')->name('user-disabled');

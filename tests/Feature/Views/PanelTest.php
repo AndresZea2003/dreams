@@ -20,13 +20,13 @@ class PanelTest extends TestCase
 
         $this->app->make(\Spatie\Permission\PermissionRegistrar::class)->registerPermissions();
     }
-    public function testAUserCannotSeePanel()
+    public function testAUserCannotSeePanel(): void
     {
         $response = $this->actingAs(User::factory()->create())->get(self::URL);
 
         $response->assertStatus(403);
     }
-    public function testAAdminCanSeePanel()
+    public function testAAdminCanSeePanel(): void
     {
         $response = $this->actingAs(User::factory()->create()->assignRole('admin'))->get(self::URL);
 

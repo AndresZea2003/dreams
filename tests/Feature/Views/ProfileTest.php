@@ -20,13 +20,13 @@ class ProfileTest extends TestCase
 
         $this->app->make(\Spatie\Permission\PermissionRegistrar::class)->registerPermissions();
     }
-    public function testAUserCanSeeProfile()
+    public function testAUserCanSeeProfile(): void
     {
         $response = $this->actingAs(User::factory()->create())->get(self::URL);
 
         $response->assertOk();
     }
-    public function testAAdminCanSeeProfile()
+    public function testAAdminCanSeeProfile(): void
     {
         $response = $this->actingAs(User::factory()->create()->assignRole('admin'))->get(self::URL);
 

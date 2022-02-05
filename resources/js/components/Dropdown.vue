@@ -1,16 +1,15 @@
 <template>
-    <div class="mr-10 my-2">
-        <Menu>
+    <div>
+        <Menu as="div" class="relative inline-block text-left">
             <div>
                 <MenuButton>
-                <button>
-                    <img
-                       class="h-15 w-15 rounded-full hover:opacity-80"
-                      :src="`https://ui-avatars.com/api/?name=${name}&background=d1d5db&color=000&size=50&bold=true`"
-                        alt="Avatar"
-                    />
-                </button>
-
+                    <button>
+                        <img
+                            class="h-15 w-15 rounded-full hover:opacity-80"
+                            :src="`https://ui-avatars.com/api/?name=${name}&background=d1d5db&color=000&size=50&bold=true`"
+                            alt="Avatar"
+                        />
+                    </button>
                 </MenuButton>
             </div>
             <transition
@@ -33,11 +32,7 @@
                                     'group flex w-full items-center rounded-md px-2 py-2 text-sm',
                                 ]"
                             >
-                                <UserCircleIcon
-                                    :active="active"
-                                    class="mr-2 h-5 w-5"
-                                    aria-hidden="true"
-                                />
+                                <UserCircleIcon :active="active" class="mr-2 h-5 w-5" aria-hidden="true" />
                                 Profile
                             </a>
                         </MenuItem>
@@ -49,11 +44,7 @@
                                     'group flex w-full items-center rounded-md px-2 py-2 text-sm',
                                 ]"
                             >
-                                <PresentationChartBarIcon
-                                    :active="active"
-                                    class="mr-2 h-5 w-5"
-                                    aria-hidden="true"
-                                />
+                                <PresentationChartBarIcon :active="active" class="mr-2 h-5 w-5" aria-hidden="true" />
                                 Panel
                             </a>
                         </MenuItem>

@@ -4,11 +4,12 @@ namespace App\Http\Controllers;
 
 use App\DTO\UserData;
 use App\Models\User;
-use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\View\View;
 
 class UserController extends Controller
 {
-    public function index()
+    public function index(): View
     {
         $users = UserData::collection(User::paginate(7))->toArray();
         $links = User::paginate(7)->links();
@@ -16,13 +17,13 @@ class UserController extends Controller
         return view('users.index', compact('users', 'links'));
     }
 
-    public function destroy(User $user)
+    public function destroy(User $user): RedirectResponse
     {
         $user->delete();
 
         return response()->redirectToRoute('users.index');
     }
-    public function toggle(User $user)
+    public function toggle(User $user): RedirectResponse
     {
         if (!$user->disabled_at) {
             $user->disabled_at = now();

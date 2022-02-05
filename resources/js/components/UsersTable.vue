@@ -1,5 +1,5 @@
 <template>
-    <div class="flex justify-center mt-5">
+    <div class="mt-5 flex justify-center">
         <div>
             <table class="overflow-hidden rounded-lg border border-gray-600 shadow">
                 <thead class="bg-zinc-800">
@@ -62,7 +62,9 @@
                                     type="submit"
                                     :class="[
                                         'flex items-center gap-2 rounded px-4 py-1 text-sm font-medium text-white',
-                                        user.disabledAt ? 'bg-red-500 hover:bg-red-600' : 'bg-green-500 hover:bg-green-600',
+                                        user.disabledAt
+                                            ? 'bg-red-500 hover:bg-red-600'
+                                            : 'bg-green-500 hover:bg-green-600',
                                     ]"
                                 >
                                     {{ user.disabledAt ? 'Disabled' : 'Enabled' }}

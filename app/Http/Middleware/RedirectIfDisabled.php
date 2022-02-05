@@ -2,7 +2,6 @@
 
 namespace App\Http\Middleware;
 
-
 class RedirectIfDisabled
 {
     public function handle($request, $next)
@@ -11,7 +10,6 @@ class RedirectIfDisabled
             return redirect('user-disabled');
         }
 
-       return $next($request);
+        return $next($request);
     }
 }
-
