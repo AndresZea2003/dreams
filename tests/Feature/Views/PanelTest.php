@@ -36,6 +36,6 @@ class PanelTest extends TestCase
     {
         $response = $this->get(self::URL);
 
-        $response->assertStatus(302);
+        $response->assertRedirect('login');
     }
 }

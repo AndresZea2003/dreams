@@ -10,34 +10,10 @@ class UserController extends Controller
 {
     public function index()
     {
-        $users = UserData::collection(User::paginate(8))->toArray();
+        $users = UserData::collection(User::paginate(7))->toArray();
+        $links = User::paginate(7)->links();
 
-        return view('users.index', compact('users'));
-    }
-
-    public function create()
-    {
-        //
-    }
-
-    public function store(Request $request)
-    {
-        //
-    }
-
-    public function show($id)
-    {
-        //
-    }
-
-    public function edit($id)
-    {
-        //
-    }
-
-    public function update(User $user)
-    {
-
+        return view('users.index', compact('users', 'links'));
     }
 
     public function destroy(User $user)

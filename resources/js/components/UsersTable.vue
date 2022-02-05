@@ -1,62 +1,59 @@
 <template>
-    <div class="mt-5 flex justify-center">
+    <div class="flex justify-center mt-5">
         <div>
-            <table class="overflow-hidden rounded-lg border border-gray-200 shadow">
-                <caption>
-                    Users table
-                </caption>
-                <thead class="bg-gray-100">
+            <table class="overflow-hidden rounded-lg border border-gray-600 shadow">
+                <thead class="bg-zinc-800">
                     <tr>
                         <th
                             scope="col"
-                            class="py-3 pl-6 text-left text-xs font-medium uppercase tracking-wider text-gray-500"
+                            class="py-3 pl-6 text-left text-xs font-medium uppercase tracking-wider text-white"
                         >
                             Id
                         </th>
                         <th
                             scope="col"
-                            class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500"
+                            class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-white"
                         >
                             Name
                         </th>
                         <th
                             scope="col"
-                            class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500"
+                            class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-white"
                         >
                             Status
                         </th>
                         <th
                             scope="col"
-                            class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500"
+                            class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-white"
                         >
                             Role
                         </th>
                         <th scope="col" class="relative px-6 py-3"></th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="bg-zinc-700">
                     <tr v-for="user in users" :key="user.id">
-                        <td class="py-3 pl-6 text-left text-xs font-medium uppercase tracking-wider text-gray-500">
+                        <td class="py-3 pl-6 text-left text-xs font-medium uppercase tracking-wider text-gray-300">
                             {{ user.id }}
                         </td>
-                        <td class="px-6 py-3 text-left text-xs font-medium text-gray-500">
+                        <td class="px-6 py-3 text-left text-xs font-medium text-white">
                             <div class="flex items-center">
                                 <img
                                     class="h-10 w-10 rounded-full"
-                                    :src="`https://ui-avatars.com/api/?name=${user.name}&background=FF0000&color=fff&size=50&bold=true`"
+                                    :src="`https://ui-avatars.com/api/?name=${user.name}&background=eed09d&color=000&size=50&bold=true`"
                                     alt="Avatar"
                                 />
                                 <div class="ml-4">
-                                    <div class="text-sm font-bold uppercase text-gray-900">
+                                    <div class="text-sm font-bold uppercase text-gray-200">
                                         {{ user.name }}
                                     </div>
-                                    <div class="text-sm text-gray-500">
+                                    <div class="text-sm text-white">
                                         {{ user.email }}
                                     </div>
                                 </div>
                             </div>
                         </td>
-                        <td class="px-6 py-3 text-left text-xs font-medium tracking-wider text-gray-500">
+                        <td class="px-6 py-3 text-left text-xs font-medium tracking-wider text-white">
                             <form :action="routes['user-status.toggle'].uri.replace('{user}', user.id)" method="POST">
                                 <CsrfToken />
                                 <input type="hidden" name="_method" value="PATCH" />
@@ -65,14 +62,14 @@
                                     type="submit"
                                     :class="[
                                         'flex items-center gap-2 rounded px-4 py-1 text-sm font-medium text-white',
-                                        user.disabledAt ? 'bg-red-500' : 'bg-green-500',
+                                        user.disabledAt ? 'bg-red-500 hover:bg-red-600' : 'bg-green-500 hover:bg-green-600',
                                     ]"
                                 >
                                     {{ user.disabledAt ? 'Disabled' : 'Enabled' }}
                                 </button>
                             </form>
                         </td>
-                        <td class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-gray-500">
+                        <td class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider text-white">
                             {{ user.role }}
                         </td>
                         <td class="relative px-6 py-3">

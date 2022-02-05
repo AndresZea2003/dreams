@@ -38,4 +38,27 @@ class IndexTest extends TestCase
 
         $response->assertStatus(302);
     }
+    public function testAnAdminCanDeleteUsers(): void
+    {
+        $user = User::factory()->create();
+
+        $this->actingAs(User::factory()->create()->assignRole('admin'))->delete("users/{$user->id}")->assertRedirect(self::URL);
+
+        $this->assertDatabaseMissing('users',[
+            'id' => $user->id
+        ]);
+    }
+    public function testAAdminCanDisableAUser(): void
+    {
+        $user = User::factory()->create();
+
+        $response = $this->actingAs(User::factory()->create()->assignRole('admin'))->patch("users/{$user->id}/toggle-status");
+        $user->refresh();
+
+        $response->assertRedirect(self::URL);
+        $this->assertDatabaseHas('users',[
+            'disabled_at' => $user->disabled_at
+        ]);
+    }
+
 }

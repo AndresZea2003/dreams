@@ -18,16 +18,18 @@ Route::get('/', function () {
     return view('welcome');
 })->middleware(['guest']);
 
-Route::group(['middleware' => ['auth', 'verified']], function () {
+Route::group(['middleware' => ['auth', 'verified', 'user.enabled']], function () {
     Route::View('/home', 'home')->name('home');
 
     Route::View('/profile', 'profile')->name('profile');
 });
 
-Route::group(['middleware' => ['auth', 'verified', 'role:admin']], function () {
+Route::group(['middleware' => ['auth', 'verified', 'role:admin', 'user.enabled']], function () {
     Route::view('panel', 'panel')->name('panel');
 
     Route::resource('users', UserController::class);
 
     Route::patch('users/{user}/toggle-status', [UserController::class, 'toggle'])->name('user-status.toggle');
 });
+
+ Route::View('/user-disabled', 'auth.user-disabled')->middleware('user.disabled')->name('user-disabled');
