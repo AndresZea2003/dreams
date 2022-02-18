@@ -1,7 +1,6 @@
 @extends('Layouts.dashboard')
 
 @section('content')
-
 <div class="flex justify-center">
     <div class="bg-zinc-800 px-5 py-5 my-10">
         <form action="{{ route('admin.products.update', $product) }}" method="POST" class="w-full max-w-lg">
@@ -10,7 +9,6 @@
             <span class="text-white font-alatsi text-2xl">
                 Edit product #{{ $product['id'] }}
             </span>
-{{--            {{ dd (json_encode($product)) }}--}}
             <div class="flex flex-wrap -mx-3 my-6">
                 <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                     <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="grid-first-name">
@@ -62,13 +60,8 @@
                         Save
                         </button>
                     </div>
-
             </div>
         </form>
     </div>
 </div>
-
-    <x-product-card name="{{ $product['name'] }}" price="{{ $product['price'] }}" description="{{ $product['description'] }}" quantity="{{ $product['quantity'] }}"></x-product-card>
-
-
 @endsection
