@@ -15,5 +15,7 @@ class ProductSeeder extends Seeder
             'price' => 1111,
             'quantity' => 9,
         ]);
+
+        Product::factory(30)->create();
     }
 }
