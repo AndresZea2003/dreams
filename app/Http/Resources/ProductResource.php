@@ -6,7 +6,7 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 class ProductResource extends JsonResource
 {
-    public function toArray($request)
+    public function toArray($request): array
     {
         return [
             'id' => $this->id,
@@ -19,7 +19,7 @@ class ProductResource extends JsonResource
             'updated_at' => $this->updated_at->format('d-m-Y'),
         ];
     }
-    public function with($request)
+    public function with($request): array
     {
         return [
             'res' => true,

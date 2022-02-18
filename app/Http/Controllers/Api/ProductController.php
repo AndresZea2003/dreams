@@ -6,16 +6,17 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreProductRequest;
 use App\Http\Requests\UpdateProductRequest;
 use App\Models\Product;
+use Illuminate\Http\JsonResponse;
 
 class ProductController extends Controller
 {
-    public function index()
+    public function index(): JsonResponse
     {
         $products = Product::paginate(3);
         return response()->json($products, 200);
     }
 
-    public function store(StoreProductRequest $request)
+    public function store(StoreProductRequest $request): JsonResponse
     {
         $product = new Product();
         $validatedData = $request->validated();
@@ -28,12 +29,12 @@ class ProductController extends Controller
         $product->save();
         return response()->json($product, 201);
     }
-    public function show(Product $product)
+    public function show(Product $product): JsonResponse
     {
         return response()->json($product, 200);
     }
 
-    public function update(UpdateProductRequest $request, Product $product)
+    public function update(UpdateProductRequest $request, Product $product): JsonResponse
     {
         $validatedData = $request->validated();
 
@@ -46,7 +47,7 @@ class ProductController extends Controller
         return response()->json($product, 202);
     }
 
-    public function destroy(Product $product)
+    public function destroy(Product $product): JsonResponse
     {
         $product->delete();
         return response()->json(null, 204);
