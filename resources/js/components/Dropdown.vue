@@ -36,6 +36,18 @@
                                 Profile
                             </a>
                         </MenuItem>
+                        <MenuItem v-slot="{ active }">
+                            <a
+                                :href="productsRoute"
+                                :class="[
+                                    active ? 'bg-zinc-800 text-white' : 'text-gray-900',
+                                    'group flex w-full items-center rounded-md px-2 py-2 text-sm',
+                                ]"
+                            >
+                                <ArchiveIcon :active="active" class="mr-2 h-5 w-5" aria-hidden="true" />
+                                Products
+                            </a>
+                        </MenuItem>
                         <MenuItem v-if="panelRoute" v-slot="{ active }">
                             <a
                                 :href="panelRoute"
@@ -75,12 +87,20 @@
 import CsrfToken from './helpers/CsrfToken';
 import { routes } from '../use';
 import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue';
-import { ChevronDownIcon, LogoutIcon, UserCircleIcon, PresentationChartBarIcon, UserIcon } from '@heroicons/vue/solid';
+import {
+    ChevronDownIcon,
+    LogoutIcon,
+    UserCircleIcon,
+    PresentationChartBarIcon,
+    UserIcon,
+    ArchiveIcon,
+} from '@heroicons/vue/solid';
 
 export default {
     props: {
         name: { type: String, required: true },
         profileRoute: { type: String, required: true },
+        productsRoute: { type: String, required: true },
         panelRoute: { type: String, required: true },
     },
     components: {
@@ -93,6 +113,7 @@ export default {
         UserCircleIcon,
         PresentationChartBarIcon,
         UserIcon,
+        ArchiveIcon,
         CsrfToken,
     },
     setup() {
