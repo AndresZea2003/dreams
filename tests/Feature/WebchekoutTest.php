@@ -24,8 +24,6 @@ class WebchekoutTest extends TestCase
         $this->assertArrayHasKey('expiration', $request);
         $this->assertArrayHasKey('locale', $request);
         $this->assertArrayHasKey('returnUrl', $request);
-
-        dd($request);
     }
 
     public function testItCanCreateSessionFromServiceCorrectly()

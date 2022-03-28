@@ -12,12 +12,12 @@ class ModelObserver
         Log::info($this->getMessage($model, 'created'), $this->info($model));
     }
 
-    public function updated(Model $model)
+    public function updated(Model $model): void
     {
         Log::info($this->getMessage($model, 'updated'), $this->info($model));
     }
 
-    public function deleted(Model $model)
+    public function deleted(Model $model): void
     {
         Log::warning($this->getMessage($model, 'deleted'), $this->info($model));
     }
@@ -34,12 +34,12 @@ class ModelObserver
         return trans('logs.messages.' . $type, ['model' => get_class($model)]);
     }
 
-    public function restored(Model $model)
+    public function restored(Model $model): void
     {
         //
     }
 
-    public function forceDeleted(Model $model)
+    public function forceDeleted(Model $model): void
     {
         //
     }

@@ -12,7 +12,7 @@ class ProductSeeder extends Seeder
         Product::create([
             'name' => 'Product Base',
             'description' => 'basic product description',
-            'price' => 1111,
+            'price' => 15000,
             'quantity' => 9,
         ]);
 

@@ -17,7 +17,7 @@ class ProductController extends Controller
         return view('admin.products.index');
     }
 
-    public function create()
+    public function create(): view
     {
         $response = Http::get('dreams.test/api/products');
         $products = $response->json();

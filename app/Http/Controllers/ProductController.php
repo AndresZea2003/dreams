@@ -16,7 +16,7 @@ class ProductController extends Controller
         $links = $products['links'];
         return view('products.index', compact('products', 'links'));
     }
-    public function show(Product $product)
+    public function show(Product $product): view
     {
         return view('products.show', compact('product'));
     }
