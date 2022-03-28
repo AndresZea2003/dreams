@@ -7,6 +7,7 @@
                 <PlusIcon class="-ml-1 mr-3 h-5 w-5" aria-hidden="true" />
                 <a href="products/create"> Add a new product </a>
             </button>
+
             <table v-if="products" class="overflow-hidden rounded-lg border border-gray-600 shadow">
                 <thead class="bg-zinc-800">
                     <tr>
@@ -77,10 +78,10 @@
                         <td class="px-3 py-3 text-left text-xs font-medium tracking-wider text-white">
                             {{ product.description }}
                         </td>
-                        <td class="px-3 py-3 text-left text-xs font-medium uppercase tracking-wider text-white">
+                        <td class="px-3 py-3 text-center text-xs font-medium uppercase tracking-wider text-white">
                             {{ product.price }}
                         </td>
-                        <td class="relative px-3 py-3">
+                        <td class="relative px-3 py-3 text-center font-bold text-white">
                             {{ product.quantity }}
                         </td>
                         <td class="relative px-3 py-3">
@@ -147,15 +148,15 @@
 import CsrfToken from './helpers/CsrfToken';
 import { routes } from '../use';
 import axios from 'axios';
-import { ref } from '@vue/reactivity';
+import { ref } from 'vue';
 
 import { TrashIcon } from '@heroicons/vue/outline';
 import { PencilIcon, PlusIcon, EyeIcon } from '@heroicons/vue/solid';
 
 console.log(routes.value['admin.products.create']);
 export default {
-    name: 'ProductsTable',
     components: { TrashIcon, CsrfToken, PencilIcon, PlusIcon, EyeIcon },
+    name: 'ProductsTable',
     setup() {
         const products = ref();
         const links = ref();
@@ -163,6 +164,7 @@ export default {
             axios.get('http://dreams.test/api/products').then((response) => {
                 products.value = response.data.data;
                 links.value = response.data.links;
+                console.log(products.value);
             });
         };
         getProducts();

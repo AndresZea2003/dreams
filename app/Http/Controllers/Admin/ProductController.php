@@ -16,6 +16,7 @@ class ProductController extends Controller
     {
         return view('admin.products.index');
     }
+
     public function create()
     {
         $response = Http::get('dreams.test/api/products');
@@ -55,13 +56,6 @@ class ProductController extends Controller
         $products = $response->json();
 
         $product->update($request->all());
-        return response()->redirectToRoute('admin.products.index');
-    }
-
-    public function destroy(Product $product): RedirectResponse
-    {
-        $product->delete();
-
         return response()->redirectToRoute('admin.products.index');
     }
 

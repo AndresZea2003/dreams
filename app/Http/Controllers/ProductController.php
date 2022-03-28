@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Support\Facades\Http;
 use Illuminate\View\View;
 use function view;
@@ -14,5 +15,9 @@ class ProductController extends Controller
         $products = $response->json();
         $links = $products['links'];
         return view('products.index', compact('products', 'links'));
+    }
+    public function show(Product $product)
+    {
+        return view('products.show', compact('product'));
     }
 }
