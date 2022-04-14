@@ -1,6 +1,9 @@
 @extends('Layouts.dashboard')
 
 @section('content')
+
+<sub-nav></sub-nav>
+
 <div class="mx-10 bg-pink-900 mt-5">
     <div class="container mx-auto grid grid-cols-6 grid-rows-6 gap-5 p-10">
         <div class="bg-gray-900 row-span-6">
@@ -14,6 +17,7 @@
             <div class="grid grid-cols-4">
             <p class="text-3xl col-span-2 font-bold">${{ $product['price'] }}</p>
                 <div class="flex justify-end">
+{{--                    <add-button></add-button>--}}
                     <button class="self-start bg-zinc-800 hover:bg-opacity-90 text-2xl text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                         <a href="{{ route('shop') }}"><shopping-cart-icon class="text-red-500 h-7 w-7 " aria-hidden="true"/></a>
                     </button>
@@ -23,11 +27,11 @@
             </div>
             <p>Envío internacional gratis</p>
             <p>Sin costos de importación</p>
-            <p class="text-xl font-bold text-center">** Almacenes Dreams **</p>
+{{--            <p class="text-xl font-bold text-center">** Almacenes Dreams **</p>--}}
             <p>Cantidad 1 (<b>{{ $product['quantity'] }} Disponibles</b>)</p>
             <p>Solo puedes comprar 1 unidad</p>
             <button class="self-center bg-zinc-800 hover:bg-opacity-90 text-2xl text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
-                <a href="{{ config('webcheckout.url') }}">Comprar ahora</a>
+                <a href="https://checkout-co.placetopay.dev/session/51625/3a61e46593c5a1401d0c70a2e09d9308">Comprar ahora</a>
             </button>
         </div>
         <div class="bg-red-300 col-span-4 p-5">

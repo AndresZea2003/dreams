@@ -9,8 +9,11 @@ import ProductsTable from './components/ProductsTable';
 import CardProduct from './components/CardProduct';
 import { RewindIcon } from '@heroicons/vue/solid';
 import { ShoppingCartIcon, StarIcon, ShoppingBagIcon } from '@heroicons/vue/outline';
+import ShoppingCart from "./components/shoppingCart/ShoppingCart";
+import AddButton from "./components/shoppingCart/AddButton";
+import SubNav from "./components/SubNav"
 
-createApp({
+const app = createApp({
     components: {
         'app': App,
         'c-button': CButton,
@@ -22,5 +25,9 @@ createApp({
         'shopping-cart-icon': ShoppingCartIcon,
         'star-icon': StarIcon,
         'shopping-bag-icon': ShoppingBagIcon,
+        'add-button': AddButton,
+        'shopping-cart': ShoppingCart,
+        'sub-nav': SubNav,
     },
-}).mount('#app');
+})
+app.mount('#app');

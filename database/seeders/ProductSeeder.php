@@ -13,7 +13,7 @@ class ProductSeeder extends Seeder
             'name' => 'Product Base',
             'description' => 'basic product description',
             'price' => 15000,
-            'quantity' => 9,
+            'available' => 9,
         ]);
 
         Product::factory(30)->create();

@@ -153,7 +153,6 @@ import { ref } from 'vue';
 import { TrashIcon } from '@heroicons/vue/outline';
 import { PencilIcon, PlusIcon, EyeIcon } from '@heroicons/vue/solid';
 
-console.log(routes.value['admin.products.create']);
 export default {
     components: { TrashIcon, CsrfToken, PencilIcon, PlusIcon, EyeIcon },
     name: 'ProductsTable',
@@ -164,7 +163,6 @@ export default {
             axios.get('http://dreams.test/api/products').then((response) => {
                 products.value = response.data.data;
                 links.value = response.data.links;
-                console.log(products.value);
             });
         };
         getProducts();

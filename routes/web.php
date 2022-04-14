@@ -12,7 +12,9 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
     Route::group(['middleware' => ['user.enabled']], function () {
         Route::view('/home', 'home')->name('home');
         Route::view('/profile', 'profile')->name('profile');
-        Route::get('products', [ProductController::class, 'index'])->name('products.index');
+        Route::resource('products', ProductController::class);
+        Route::view('/shop', 'shop')->name('shop');
+        Route::view('/payment', 'payment')->name('payment');
 
         Route::group(['middleware' => ['role:admin']], function () {
             Route::view('panel', 'panel')->name('panel');

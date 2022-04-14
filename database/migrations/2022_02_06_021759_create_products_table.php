@@ -13,7 +13,7 @@ class CreateProductsTable extends Migration
             $table->string('name', 100);
             $table->tinyText('description');
             $table->integer('price');
-            $table->unsignedInteger('quantity');
+            $table->unsignedInteger('available');
             $table->timestamp('disabled_at')->nullable();
             $table->timestamps();
         });

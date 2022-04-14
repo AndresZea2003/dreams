@@ -111,7 +111,6 @@ export default {
     },
     setup(props) {
         const toggleStatus = (user) => {
-            console.log(user);
             axios.post(routes.value['user-status.toggle'].uri.replace('{user}', user.id));
         };
         return { toggleStatus, routes };
