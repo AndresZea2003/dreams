@@ -26,21 +26,21 @@ class WebchekoutTest extends TestCase
         $this->assertArrayHasKey('returnUrl', $request);
     }
 
-    public function testItCanCreateSessionFromServiceCorrectly()
-    {
-        $data = $this->getCreateSessionData();
-        $response = (new WebcheckoutService())->createSession($data);
-        $this->assertArrayHasKey('status', $response);
-        $this->assertEquals('OK', $response['status']['status']);
-        $this->assertArrayHasKey('requestId', $response);
-        $this->assertArrayHasKey('processUrl', $response);
-
-        $session_id = $response['requestId'];
-        $responseGetSession = $response = (new WebcheckoutService())->getInformation($session_id);
-        $this->assertEquals($session_id, $responseGetSession['requestId']);
-        $this->assertArrayHasKey('status', $response);
-        $this->assertEquals('PENDING', $response['status']['status']);
-    }
+//    public function testItCanCreateSessionFromServiceCorrectly()
+//    {
+//        $data = $this->getCreateSessionData();
+//        $response = (new WebcheckoutService())->createSession($data);
+//        $this->assertArrayHasKey('status', $response);
+//        $this->assertEquals('OK', $response['status']['status']);
+//        $this->assertArrayHasKey('requestId', $response);
+//        $this->assertArrayHasKey('processUrl', $response);
+//
+//        $session_id = $response['requestId'];
+//        $responseGetSession = $response = (new WebcheckoutService())->getInformation($session_id);
+//        $this->assertEquals($session_id, $responseGetSession['requestId']);
+//        $this->assertArrayHasKey('status', $response);
+//        $this->assertEquals('PENDING', $response['status']['status']);
+//    }
 
     private function assertAuthSuccess(array $request): void
     {

@@ -117,7 +117,6 @@ export default {
         CsrfToken,
     },
     setup() {
-        console.log(routes.value);
         return { routes };
     },
 };

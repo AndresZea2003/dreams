@@ -34,7 +34,7 @@
                     <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="grid-password">
                     Description
                     </label>
-                    <input class="appearance-none block w-full bg-white text-black border border-white rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-white" name="description" id="description" type="text" placeholder="Product description example">
+                    <input class="appearance-none block w-full bg-white text-black border border-white rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-white" name="description" id="description" type="text" placeholder="Product description example" value="{{ old('description') }}">
                     @error('description')
                         <p class="text-red-500 text-xs italic">Please choose a description</p>
                     @enderror
@@ -43,11 +43,11 @@
             <div class="flex flex-wrap -mx-3 mb-2">
                 <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
                     <label class="block uppercase tracking-wide text-white text-xs font-bold mb-2" for="grid-city">
-                    Quantity
+                    Available
                     </label>
-                    <input class="appearance-none block w-full bg-white text-black border border-white rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-white" name="quantity" id="quantity" type="number" placeholder="15">
-                    @error('quantity')
-                        <p class="text-red-500 text-xs italic">The quantity is required</p>
+                    <input type="number" name="available" class="appearance-none block w-full bg-white text-black border border-white rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-white" placeholder="15" value="{{ old('available') }}">
+                    @error('available')
+                        <p class="text-red-500 text-xs italic">The available is required</p>
                     @enderror
                 </div>
                 <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">

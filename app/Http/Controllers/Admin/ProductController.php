@@ -32,7 +32,7 @@ class ProductController extends Controller
         $product = new Product();
         $product->name = $request->input('name');
         $product->price = $request->input('price');
-        $product->quantity = $request->input('quantity');
+        $product->available = $request->input('available');
         $product->description = $request->input('description');
 
         $product->save();

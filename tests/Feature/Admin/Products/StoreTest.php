@@ -11,15 +11,17 @@ class StoreTest extends TestCase
 
     public function testItStoresANewProduct(): void
     {
-        $this->post('api/products', [
+        $response = $this->postJson('api/products', [
             'name' => 'TestProduct',
             'description' => 'descriptionTest',
-            'price' => 1000,
-            'quantity' => 12,
+            'price' => 50000,
+            'available' => 12
         ]);
+
         $this->assertDatabaseHas(
             'products',
-            ['name'=>'TestProduct', 'description'=>'descriptionTest', 'price'=>1000, 'quantity'=>12]
+            ['name'=>'TestProduct', 'description'=>'descriptionTest', 'price'=>50000, 'available'=>12]
         );
+        $response->assertStatus(201);
     }
 }

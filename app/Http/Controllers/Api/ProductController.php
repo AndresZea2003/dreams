@@ -24,7 +24,7 @@ class ProductController extends Controller
         $product->name = $validatedData['name'];
         $product->description = $validatedData['description'];
         $product->price = $validatedData['price'];
-        $product->quantity = $validatedData['quantity'];
+        $product->available = $validatedData['available'];
 
         $product->save();
         return response()->json($product, 201);
@@ -41,7 +41,7 @@ class ProductController extends Controller
         $product->name = $validatedData['name'];
         $product->description = $validatedData['description'];
         $product->price = $validatedData['price'];
-        $product->quantity = $validatedData['quantity'];
+        $product->available = $validatedData['available'];
 
         $product->save();
         return response()->json($product, 202);

@@ -8,7 +8,6 @@ export default {
         token.value = props.csrf;
         routes.value = props.routes.attributes;
         shoppingCartItems.value = JSON.parse(localStorage.getItem('products') ?? '[]');
-        console.log(shoppingCartItems.value)
     },
 };
 </script>
