@@ -25,7 +25,11 @@ import { ShoppingCartIcon, StarIcon, ShoppingBagIcon } from '@heroicons/vue/outl
 import { ref } from 'vue';
 import { getCartProducts } from '../use';
 
-const products = ref(getCartProducts());
+const props = defineProps({
+    user_id: {type:Number, required:true}
+})
+
+const products = ref(getCartProducts(props.user_id));
 const totalQuantity = ref(0);
 
 totalQuantity.value = products.value.reduce((prev, current) => prev + current.quantity, 0);

@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <sub-nav></sub-nav>
+    <sub-nav :user_id="{{ auth()->user()->id }}"></sub-nav>
 
     <div class="mx-40 mt-10 ">
 
@@ -35,7 +35,7 @@
 
 
                 <div class="bg-gray-800 rounded-md drop-shadow-lg col-span-4 row-span-6 grid grid-cols-3 gap-5 p-5 z-0">
-                    <card-product :products="{{json_encode($products['data'])}}" :links="{{ json_encode($products['links']) }}"></card-product>
+                    <card-product :products="{{json_encode($products['data'])}}" :links="{{ json_encode($products['links']) }}" :user_id="{{ auth()->user()->id }}"></card-product>
                 </div>
 
             </div>

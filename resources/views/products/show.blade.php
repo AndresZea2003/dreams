@@ -2,7 +2,7 @@
 
 @section('content')
 
-<sub-nav></sub-nav>
+<sub-nav :user_id="{{ auth()->user()->id }}"></sub-nav>
 
 <div class="mx-10 bg-pink-900 mt-5">
     <div class="container mx-auto grid grid-cols-6 grid-rows-6 gap-5 p-10">
