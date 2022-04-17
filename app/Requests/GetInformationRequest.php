@@ -11,7 +11,7 @@ class GetInformationRequest implements WebcheckoutRequestContract
     {
         $seed = date('c');
         $nonce = Str::random(8);
-        $tranKey = base64_encode(hash('sha1', $nonce . $seed . config('webchekout.tranKey'), true));
+        $tranKey = base64_encode(hash('sha1',$nonce.$seed.'024h1IlD', true));
 
         return[
             'auth' => [
@@ -25,6 +25,6 @@ class GetInformationRequest implements WebcheckoutRequestContract
 
     public static function url(?int $session_id): string
     {
-        return config('webcheckout.url') . '/api/session' . $session_id;
+        return config('webcheckout.url').'api/session/'.$session_id;
     }
 }

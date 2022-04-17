@@ -37,7 +37,6 @@ class WebcheckoutService implements WebchekoutContract
         $response = $this->client->request('post', $url, [
             'json' => $data,
             'verify' => false,
-
         ]);
         $content = $response->getBody()->getContents();
         return json_decode($content, true);
