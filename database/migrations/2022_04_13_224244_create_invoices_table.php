@@ -16,7 +16,9 @@ class CreateInvoicesTable extends Migration
     {
         Schema::create('invoices', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained('users');
             $table->string('reference');
+            $table->integer('quantity_products');
             $table->integer('total');
             $table->enum('status', [invoice::APPROVED, invoice::PENDING, invoice::REJECTED]);
             $table->timestamps();
@@ -30,6 +32,6 @@ class CreateInvoicesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('invoice');
+        Schema::dropIfExists('invoices');
     }
 }

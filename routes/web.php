@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\InvoiceController;
+use App\Http\Controllers\InvoiceProductController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -26,3 +28,4 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 });
 
 Route::resource('invoices', InvoiceController::class);
+Route::resource('payments',PaymentController::class);

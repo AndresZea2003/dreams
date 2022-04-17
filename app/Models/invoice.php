@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class invoice extends Model
+class Invoice extends Model
 {
     use HasFactory;
 
@@ -15,6 +15,8 @@ class invoice extends Model
 
     protected $fillable = [
         'reference',
+        'user_id',
+        'quantity_products',
         'total',
         'status',
     ];

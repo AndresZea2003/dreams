@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreInvoiceRequest;
 use App\Http\Requests\UpdateInvoiceRequest;
 use App\Models\invoice;
+use Illuminate\Http\Request;
 
 class InvoiceController extends Controller
 {
@@ -18,15 +19,19 @@ class InvoiceController extends Controller
         //
     }
 
-    public function store(StoreInvoiceRequest $request)
+    public function store(Request $request)
     {
-        $invoice = new invoice();
-        $invoice->reference = '#' . $request->input('reference');
+        $invoice = new Invoice;
+        $invoice->reference = (random_int(1000000000, 10000000000));
+        $invoice->user_id = auth()->user()->id;
+        $invoice->quantity_products = $request->input('quantity_products');
         $invoice->total = $request->input('total');
-        $invoice->status = $request->input('status');
+        $invoice->status = Invoice::PENDING;
 
         $invoice->save();
-        return redirect(route('shop', $invoice));
+
+        return redirect(route('invoices.store', $invoice));
+
     }
 
     public function show(invoice $invoices)
