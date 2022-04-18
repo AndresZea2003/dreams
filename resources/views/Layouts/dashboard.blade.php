@@ -8,7 +8,7 @@
             <a href="{{ route('home') }}" class="font-fugaz-one text-gray-400 hover:text-white text-6xl">Dreams</a>
             </div>
             <div class="text-right">
-            <dropdown name='{{ auth()->user()->name }}' profile-route="{{ route('profile') }}" products-route="{{ route('products.index') }}" panel-route="{{ auth()->user()->hasRole('admin') ? route('panel') : null }}"></dropdown>
+            <dropdown name='{{ auth()->user()->name }}' profile-route="{{ route('profile') }}" products-route="{{ route('products.index') }}" payments-route="{{ route('payments.index') }}" panel-route="{{ auth()->user()->hasRole('admin') ? route('panel') : null }}"></dropdown>
             </div>
 
         </nav>

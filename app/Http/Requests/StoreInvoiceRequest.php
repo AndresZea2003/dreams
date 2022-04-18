@@ -14,7 +14,6 @@ class StoreInvoiceRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'reference' => 'required',
             'total' => 'required',
             'status' => 'required',
         ];

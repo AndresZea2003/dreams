@@ -48,6 +48,18 @@
                                 Products
                             </a>
                         </MenuItem>
+                        <MenuItem v-slot="{ active }">
+                            <a
+                                :href="paymentsRoute"
+                                :class="[
+                                    active ? 'bg-zinc-800 text-white' : 'text-gray-900',
+                                    'group flex w-full items-center rounded-md px-2 py-2 text-sm',
+                                ]"
+                            >
+                                <BookOpenIcon :active="active" class="mr-2 h-5 w-5" aria-hidden="true" />
+                                Payments
+                            </a>
+                        </MenuItem>
                         <MenuItem v-if="panelRoute" v-slot="{ active }">
                             <a
                                 :href="panelRoute"
@@ -94,6 +106,7 @@ import {
     PresentationChartBarIcon,
     UserIcon,
     ArchiveIcon,
+    BookOpenIcon
 } from '@heroicons/vue/solid';
 
 export default {
@@ -102,6 +115,7 @@ export default {
         profileRoute: { type: String, required: true },
         productsRoute: { type: String, required: true },
         panelRoute: { type: String, required: true },
+        paymentsRoute: { type: String, required:true},
     },
     components: {
         Menu,
@@ -114,6 +128,7 @@ export default {
         PresentationChartBarIcon,
         UserIcon,
         ArchiveIcon,
+        BookOpenIcon,
         CsrfToken,
     },
     setup() {
