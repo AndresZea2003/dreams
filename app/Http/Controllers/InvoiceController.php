@@ -4,11 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\UpdateInvoiceRequest;
 use App\Models\invoice;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\View\View;
 
 class InvoiceController extends Controller
 {
-    public function index()
+    public function index(): view
     {
         return view('invoices.index');
     }
@@ -18,7 +21,7 @@ class InvoiceController extends Controller
         //
     }
 
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
         $invoice = new Invoice();
         $id = $invoice['id'];
@@ -34,7 +37,7 @@ class InvoiceController extends Controller
         return redirect(route('invoices.show' . $id, $invoice));
     }
 
-    public function show(invoice $invoice)
+    public function show(invoice $invoice): view
     {
         return view('invoices.show', compact('invoice'));
     }

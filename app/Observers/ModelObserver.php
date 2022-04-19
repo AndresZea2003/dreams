@@ -2,11 +2,14 @@
 
 namespace App\Observers;
 
+use App\Models\Invoice;
+use App\Models\Payment;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Log;
 
 class ModelObserver
 {
+
     public function created(Model $model): void
     {
         Log::info($this->getMessage($model, 'created'), $this->info($model));

@@ -6,17 +6,24 @@ use App\DTO\PaymentData;
 use App\Models\Payment;
 use App\Services\WebcheckoutService;
 
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\View\View;
 use phpDocumentor\Reflection\DocBlock\Tags\Reference\Reference;
 
 class PaymentController extends Controller
 {
-    public function index()
+    public function index(): view
     {
         $payments = PaymentData::collection(Payment::paginate(7))->toArray();
 //        $links = Payment::paginate(2)->links();
 //        dd($payments);
-        return view('payments.index', compact('payments'));
+//        return view('payments.index', compact('payments'));
+        $user_id = auth()->user()->id;
+        $payments = Payment::all()->where('user_id',$user_id)->toArray();
+        $count = Payment::all()->where('user_id',$user_id)->count();
+        return view('payments.index', compact('payments','count'));
     }
 
     public function create()
@@ -24,7 +31,7 @@ class PaymentController extends Controller
         //
     }
 
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
         $payment = new Payment();
 
@@ -62,7 +69,7 @@ class PaymentController extends Controller
         return redirect($process_url);
     }
 
-    public function show(Payment $payment)
+    public function show(Payment $payment): view
     {
         return view('payments.show', compact('payment'));
     }
@@ -72,7 +79,7 @@ class PaymentController extends Controller
         //
     }
 
-    public function update(Request $request, Payment $payment)
+    public function update(Request $request, Payment $payment): RedirectResponse
     {
         $session_id = $payment->attributesToArray()['request_id'];
 
@@ -93,7 +100,7 @@ class PaymentController extends Controller
     {
         //
     }
-    public function TryPayment(Payment $payment)
+    public function TryPayment(Payment $payment): RedirectResponse
     {
         return redirect($payment->attributesToArray()['process_url']);
     }
