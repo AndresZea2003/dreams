@@ -4,13 +4,9 @@ namespace App\Http\Controllers;
 
 use App\DTO\PaymentData;
 use App\Models\Payment;
-use App\Requests\CreateSessionRequest;
-use App\Requests\GetInformationRequest;
 use App\Services\WebcheckoutService;
 
-use App\Models\invoice;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use phpDocumentor\Reflection\DocBlock\Tags\Reference\Reference;
 
 class PaymentController extends Controller
@@ -30,7 +26,7 @@ class PaymentController extends Controller
 
     public function store(Request $request)
     {
-        $payment = new Payment;
+        $payment = new Payment();
 
         $data = [
             'payment' => [
@@ -41,14 +37,13 @@ class PaymentController extends Controller
                     'total' => $request->input('amount'),
                 ],
             ],
-            'returnUrl' => 'http://dreams.test/payments/'.$request->input('invoice_id'),
+            'returnUrl' => 'http://dreams.test/payments/' . $request->input('invoice_id'),
             'expiration' => date('c', strtotime('+2 days')),
         ];
 
         $webcheckout = (new WebcheckoutService())->createSession($data);
         $session_id = $webcheckout['requestId'];
         $process_url = $webcheckout['processUrl'];
-
 
         $payment->Reference = $data['payment']['reference'];
         $payment->description = $data['payment']['description'];
@@ -63,7 +58,6 @@ class PaymentController extends Controller
         $payment->status = $responseGetSession['status']['status'];
 
         $payment->save();
-
 
         return redirect($process_url);
     }
@@ -92,7 +86,7 @@ class PaymentController extends Controller
 //        dd($responseGetSession['requestId']);
 
         $payment->save();
-        return redirect('http://dreams.test/payments/'.$payment->id);
+        return redirect('http://dreams.test/payments/' . $payment->id);
     }
 
     public function destroy($id)

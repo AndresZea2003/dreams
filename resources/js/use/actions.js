@@ -6,7 +6,7 @@ export const getCartProducts = (user_id) => {
 };
 
 export const actions = {
-    addToCart: (product,user_id) => {
+    addToCart: (product, user_id) => {
         const products = getCartProducts(user_id);
         const id = findIndex(products, ['id', product.id]);
 

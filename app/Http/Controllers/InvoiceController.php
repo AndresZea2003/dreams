@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreInvoiceRequest;
 use App\Http\Requests\UpdateInvoiceRequest;
 use App\Models\invoice;
 use Illuminate\Http\Request;
@@ -21,7 +20,7 @@ class InvoiceController extends Controller
 
     public function store(Request $request)
     {
-        $invoice = new Invoice;
+        $invoice = new Invoice();
         $id = $invoice['id'];
 
         $invoice->reference = (random_int(1000000000, 10000000000));
@@ -32,9 +31,7 @@ class InvoiceController extends Controller
 
         $invoice->save();
 
-
-        return redirect(route('invoices.show'.$id, $invoice));
-
+        return redirect(route('invoices.show' . $id, $invoice));
     }
 
     public function show(invoice $invoice)

@@ -15,7 +15,7 @@ class StoreTest extends TestCase
             'name' => 'TestProduct',
             'description' => 'descriptionTest',
             'price' => 50000,
-            'available' => 12
+            'available' => 12,
         ]);
 
         $this->assertDatabaseHas(

@@ -27,11 +27,11 @@
                 >
                     <a :href="`products/${product.id}`"> ver </a>
                 </button>
-<!--                <AddButton :product="product" :user-id="userId"></AddButton>-->
+                <!--                <AddButton :product="product" :user-id="userId"></AddButton>-->
                 <button
-                    @click="actions.addToCart(product,user_id)"
+                    @click="actions.addToCart(product, user_id)"
                     class="focus:shadow-outline mx-5 rounded bg-zinc-800 py-2 px-4 text-2xl font-bold text-white hover:bg-opacity-90 focus:outline-none"
-                        >
+                >
                     <ShoppingCartIcon class="h-7 w-7 text-red-500" aria-hidden="true" />
                 </button>
             </div>
@@ -43,7 +43,7 @@
 import CsrfToken from './helpers/CsrfToken';
 import AddButton from './shoppingCart/AddButton';
 import { TrashIcon, ShoppingCartIcon } from '@heroicons/vue/outline';
-import { actions } from "../use";
+import { actions } from '../use';
 
 export default {
     name: 'CardProduct',
@@ -51,12 +51,10 @@ export default {
     props: {
         products: { type: Array, required: true },
         links: { type: Array, required: true },
-        user_id: {type: Number, required:true },
-
+        user_id: { type: Number, required: true },
     },
-    setup()
-    {
-         return {actions}
-    }
+    setup() {
+        return { actions };
+    },
 };
 </script>

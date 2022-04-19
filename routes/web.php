@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\InvoiceController;
-use App\Http\Controllers\InvoiceProductController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
@@ -28,5 +27,5 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 });
 
 Route::resource('invoices', InvoiceController::class);
-Route::resource('payments',PaymentController::class);
-Route::post('payments/{payment}/try-payment',[PaymentController::class, 'TryPayment'])->name('payment.try-payment');
+Route::resource('payments', PaymentController::class);
+Route::post('payments/{payment}/try-payment', [PaymentController::class, 'TryPayment'])->name('payment.try-payment');

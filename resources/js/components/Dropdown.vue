@@ -106,7 +106,7 @@ import {
     PresentationChartBarIcon,
     UserIcon,
     ArchiveIcon,
-    BookOpenIcon
+    BookOpenIcon,
 } from '@heroicons/vue/solid';
 
 export default {
@@ -115,7 +115,7 @@ export default {
         profileRoute: { type: String, required: true },
         productsRoute: { type: String, required: true },
         panelRoute: { type: String, required: true },
-        paymentsRoute: { type: String, required:true},
+        paymentsRoute: { type: String, required: true },
     },
     components: {
         Menu,

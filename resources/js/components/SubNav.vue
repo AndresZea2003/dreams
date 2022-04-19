@@ -26,8 +26,8 @@ import { ref } from 'vue';
 import { getCartProducts } from '../use';
 
 const props = defineProps({
-    user_id: {type:Number, required:true}
-})
+    user_id: { type: Number, required: true },
+});
 
 const products = ref(getCartProducts(props.user_id));
 const totalQuantity = ref(0);

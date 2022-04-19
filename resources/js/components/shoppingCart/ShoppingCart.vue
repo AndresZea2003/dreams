@@ -6,8 +6,8 @@ import { TrashIcon } from '@heroicons/vue/outline';
 import CsrfToken from '../helpers/CsrfToken';
 
 const props = defineProps({
-    user_id: {type:String, required:true}
-})
+    user_id: { type: String, required: true },
+});
 
 const products = ref(getCartProducts(props.user_id));
 
@@ -19,7 +19,7 @@ const deleteKey = (key) => {
     location.replace('http://dreams.test/shop');
 };
 
-const change = (product, isAdd,user_id) => {
+const change = (product, isAdd, user_id) => {
     if (isAdd) product.quantity++;
     else product.quantity--;
     if (!product.quantity) {
@@ -29,7 +29,7 @@ const change = (product, isAdd,user_id) => {
     localStorage.setItem(`products${user_id}`, JSON.stringify(products.value));
 };
 
-const deleteItem = (product,user_id) => {
+const deleteItem = (product, user_id) => {
     const id = findIndex(products.value, ['id', product.id]);
     products.value.splice(id, 1);
     localStorage.setItem(`products${user_id}`, JSON.stringify(products.value));
@@ -93,7 +93,7 @@ watch(products.value, () => calculateTotals());
                                 <td>
                                     <div class="relative mt-1 flex w-full flex-row rounded-lg bg-transparent">
                                         <button
-                                            @click="change(product,false,user_id)"
+                                            @click="change(product, false, user_id)"
                                             class="cursor-pointer rounded-l bg-gray-300 py-1 px-3 text-gray-600 hover:bg-gray-400 hover:text-gray-700"
                                         >
                                             -
@@ -103,7 +103,7 @@ watch(products.value, () => calculateTotals());
                                             >{{ product.quantity }}</span
                                         >
                                         <button
-                                            @click="change(product,true,user_id)"
+                                            @click="change(product, true, user_id)"
                                             class="cursor-pointer rounded-r bg-gray-300 py-1 px-3 text-gray-600 hover:bg-gray-400 hover:text-gray-700"
                                         >
                                             +
@@ -116,7 +116,7 @@ watch(products.value, () => calculateTotals());
                                 </td>
                                 <td>
                                     <button
-                                        @click="deleteItem(product,user_id)"
+                                        @click="deleteItem(product, user_id)"
                                         class="focus:shadow-outline rounded bg-red-500 p-2 font-bold text-white hover:bg-opacity-90 focus:outline-none"
                                     >
                                         <trash-icon class="h-5 w-5" aria-hidden="true" />
@@ -141,13 +141,19 @@ watch(products.value, () => calculateTotals());
                                     <div>
                                         <form action="invoices" method="POST" class="text-black">
                                             <csrf-token></csrf-token>
-<!--                                            <input type="number" name="user_id" :value="user_id" hidden >-->
-                                            <input type="number" name="quantity_products" :value="totalQuantity" hidden >
+                                            <!--                                            <input type="number" name="user_id" :value="user_id" hidden >-->
+                                            <input
+                                                type="number"
+                                                name="quantity_products"
+                                                :value="totalQuantity"
+                                                hidden
+                                            />
                                             <input type="number" name="total" :value="totalPrice" hidden />
 
                                             <button
                                                 type="submit"
-                                                class="focus:shadow-outline rounded bg-zinc-800 py-2 px-4 font-bold text-white hover:bg-opacity-90 focus:outline-none">
+                                                class="focus:shadow-outline rounded bg-zinc-800 py-2 px-4 font-bold text-white hover:bg-opacity-90 focus:outline-none"
+                                            >
                                                 <!--                                                <a href="{{ config('webcheckout.url') }}">-->
                                                 <!--                                                </a>-->
                                                 Continuar con el pago

@@ -17,6 +17,6 @@ class Payment extends Model
         'process_url',
         'request_id',
         'user_id',
-        'invoice_id'
+        'invoice_id',
     ];
 }

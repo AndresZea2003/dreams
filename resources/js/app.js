@@ -12,9 +12,9 @@ import { ShoppingCartIcon, StarIcon, ShoppingBagIcon } from '@heroicons/vue/outl
 import ShoppingCart from './components/shoppingCart/ShoppingCart';
 import AddButton from './components/shoppingCart/AddButton';
 import SubNav from './components/SubNav';
-import InvoiceCart from './components/shoppingCart/InvoiceCart'
-import PaymentCart from './components/shoppingCart/PaymentCart'
-import PaymentsTable from './components/PaymentsTable'
+import InvoiceCart from './components/shoppingCart/InvoiceCart';
+import PaymentCart from './components/shoppingCart/PaymentCart';
+import PaymentsTable from './components/PaymentsTable';
 
 const app = createApp({
     components: {

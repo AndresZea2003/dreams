@@ -21,7 +21,16 @@ class PaymentData extends Data
     }
     public static function fromModel(Payment $payment): self
     {
-        return new self($payment->id, $payment->reference, $payment->description, $payment->amount, $payment->status, $payment->process_url,
-                        $payment->request_id, $payment->user_id, $payment->invoice_id);
+        return new self(
+            $payment->id,
+            $payment->reference,
+            $payment->description,
+            $payment->amount,
+            $payment->status,
+            $payment->process_url,
+            $payment->request_id,
+            $payment->user_id,
+            $payment->invoice_id
+        );
     }
 }
