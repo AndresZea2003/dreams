@@ -50,6 +50,11 @@ console.log(payment.value)
 
 
         <div class="mt-5">
+            <button class="focus:shadow-outline rounded bg-zinc-800 mr-20 py-2 px-4 font-bold text-white hover:bg-opacity-90 focus:outline-none">
+                        <a href="http://dreams.test/payments">
+                            Regresar
+                        </a>
+                    </button>
             <form :action="`http://dreams.test/payments/${payment.id}/try-payment`" method="post">
                 <csrf-token></csrf-token>
 <!--                <input type="text" :value="reference" name="reference" hidden>-->
@@ -57,12 +62,6 @@ console.log(payment.value)
 <!--                <input type="number" :value="id" name="invoice_id" hidden>-->
 <!--                <input type="number" :value="total" name="amount" hidden>-->
                 <div class="flex justify-between">
-
-                    <button class="focus:shadow-outline rounded bg-zinc-800 mr-20 py-2 px-4 font-bold text-white hover:bg-opacity-90 focus:outline-none">
-                        <a href="http://dreams.test/payments">
-                            Regresar
-                        </a>
-                    </button>
                     <button v-if="payment.status==='PENDING'" type="submit" class="focus:shadow-outline rounded bg-zinc-800 py-2 px-4 font-bold text-white hover:bg-opacity-90 focus:outline-none">
                         Reintentar el pago
                     </button>
