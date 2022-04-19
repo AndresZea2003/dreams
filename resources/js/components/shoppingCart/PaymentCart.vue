@@ -1,6 +1,7 @@
 <script setup>
 
 import {ref} from "vue";
+import CsrfToken from "../helpers/CsrfToken";
 
 const props = defineProps({
     payment: {type:Object , required:true}
@@ -49,7 +50,7 @@ console.log(payment.value)
 
 
         <div class="mt-5">
-            <form action="http://dreams.test/payments" method="post">
+            <form :action="`http://dreams.test/payments/${payment.id}/try-payment`" method="post">
                 <csrf-token></csrf-token>
 <!--                <input type="text" :value="reference" name="reference" hidden>-->
 <!--                <input type="text" :value="description" name="description" hidden>-->
@@ -62,11 +63,19 @@ console.log(payment.value)
                             Regresar
                         </a>
                     </button>
-                    <button type="submit" class="focus:shadow-outline rounded bg-zinc-800 py-2 px-4 font-bold text-white hover:bg-opacity-90 focus:outline-none">
+                    <button v-if="payment.status==='PENDING'" type="submit" class="focus:shadow-outline rounded bg-zinc-800 py-2 px-4 font-bold text-white hover:bg-opacity-90 focus:outline-none">
                         Reintentar el pago
                     </button>
                 </div>
             </form>
+
+            <form :action="`http://dreams.test/payments/${payment.id}`" method="POST">
+                        <csrf-token></csrf-token>
+                        <input type="hidden" name="_method" value="PATCH" />
+                        <button type="submit" class="focus:shadow-outline rounded bg-zinc-800 py-2 px-4 font-bold text-white hover:bg-opacity-90 focus:outline-none">
+                                Refresh
+                        </button>
+                    </form>
 
             </div>
     </div>

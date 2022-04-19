@@ -29,3 +29,4 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 
 Route::resource('invoices', InvoiceController::class);
 Route::resource('payments',PaymentController::class);
+Route::post('payments/{payment}/try-payment',[PaymentController::class, 'TryPayment'])->name('payment.try-payment');
