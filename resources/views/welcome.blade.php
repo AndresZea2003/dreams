@@ -17,7 +17,7 @@
     {{--            </div>--}}
     {{--    </div>--}}
 
-    <div class="flex flex-col justify-center items-center h-full bg-neutral-900 font-fugaz-one text-white text-4xl">
+    <div class="flex flex-col justify-center items-center h-full bg-neutral-800 font-fugaz-one text-white text-4xl">
         <div class="spinner">
             <span>D</span>
             <span>R</span>
