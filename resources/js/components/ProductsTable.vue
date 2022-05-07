@@ -79,7 +79,7 @@
                             {{ product.description }}
                         </td>
                         <td class="px-3 py-3 text-center text-xs font-medium uppercase tracking-wider text-white">
-                            {{ product.price }}
+                            ${{ product.price }} COP
                         </td>
                         <td class="relative px-3 py-3 text-center font-bold text-white">
                             {{ product.quantity }}
@@ -130,7 +130,7 @@
                     </tr>
                 </tbody>
             </table>
-            <div class="flex">
+            <div class="flex justify-center">
                 <div
                     @click="goTo(link.url)"
                     class="cursor-pointer rounded border border-gray-600 bg-zinc-800 p-4 text-white hover:bg-black"

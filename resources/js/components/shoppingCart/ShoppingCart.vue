@@ -47,21 +47,19 @@ watch(products.value, () => calculateTotals());
 <template>
     <div class="container mx-auto">
         <div class="mx-10">
-            <p class="font-alatsi text-center text-4xl text-gray-200">Lista de productos agregados al carrito</p>
-            <br />
-            <div class="mx-60 gap-1 rounded-md bg-gray-700 p-10 text-white drop-shadow-lg">
-                <div class="font-alatsi mb-5 flex justify-between border-b-2 border-black px-5 text-2xl">
+            <div class="mx-60 gap-1 rounded-md bg-neutral-800 p-10 text-white drop-shadow-lg">
+                <div class="font-alatsi pb-5 flex justify-between border-b-2 border-black px-5 text-2xl">
                     <p>Carrito ( {{ totalQuantity }} products )</p>
                     <button
                         v-if="products != 0"
                         @click="deleteKey(`products${user_id}`)"
-                        class="focus:shadow-outline rounded bg-zinc-800 py-2 px-4 text-sm text-white hover:bg-opacity-90 focus:outline-none"
+                        class="focus:shadow-outline rounded bg-gray-600 py-2 px-4 text-sm text-white hover:bg-opacity-90 focus:outline-none"
                     >
                         Eliminar productos del carrito
                     </button>
                 </div>
 
-                <div>
+                <div class="pt-5">
                     <table>
                         <thead>
                             <tr v-if="products != 0" class="grid grid-cols-10">
@@ -131,9 +129,11 @@ watch(products.value, () => calculateTotals());
                                 <td class="col-span-6 py-5">
                                     <div>
                                         <button
-                                            class="focus:shadow-outline rounded bg-zinc-800 py-2 px-4 font-bold text-white hover:bg-opacity-90 focus:outline-none"
+                                            class="focus:shadow-outline rounded bg-gray-600 py-2 px-4 font-bold text-white hover:bg-opacity-90 focus:outline-none"
                                         >
-                                            <a href="http://dreams.test/products"> Regresar a la tienda </a>
+                                            <a href="http://dreams.test/products">
+                                                Regresar a la tienda
+                                            </a>
                                         </button>
                                     </div>
                                 </td>
@@ -152,7 +152,7 @@ watch(products.value, () => calculateTotals());
 
                                             <button
                                                 type="submit"
-                                                class="focus:shadow-outline rounded bg-zinc-800 py-2 px-4 font-bold text-white hover:bg-opacity-90 focus:outline-none"
+                                                class="focus:shadow-outline rounded bg-gray-600 py-2 px-4 font-bold text-white hover:bg-opacity-90 focus:outline-none"
                                             >
                                                 <!--                                                <a href="{{ config('webcheckout.url') }}">-->
                                                 <!--                                                </a>-->

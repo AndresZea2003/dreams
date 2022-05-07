@@ -44,7 +44,7 @@
             <span>N</span>
             <span><x-logo></x-logo></span>
         </div>
-        <form action="{{ route('login') }}" method="POST" class="bg-zinc-800 shadow-2xl rounded px-8 pt-6 pb-8 mb-4">
+        <form action="{{ route('login') }}" method="POST" class="mt-10 bg-zinc-800 shadow-2xl rounded px-8 pt-6 pb-8 mb-4">
             @csrf
             <div class="input-group my-5">
                 <input required="" autocomplete="off" class="input" name="email" id="email"
@@ -54,7 +54,7 @@
 
             <div class="input-group my-5">
                 <input required="" autocomplete="off" class="input" name="password" id="password"
-                       value="{{ old('email') }}" type="password">
+                       value="{{ old('password') }}" type="password">
                 <label class="user-label">Password</label>
             </div>
             <div class="flex justify-center">
