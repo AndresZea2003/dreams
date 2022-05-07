@@ -1,7 +1,7 @@
-@extends('Layouts.dashboard')
+@extends('Layouts.app')
 
-@section('content')
-<sub-nav :user_id="{{ auth()->user()->id }}"></sub-nav>
+@section('main')
+<x-nav></x-nav>
 <shopping-cart :user_id="{{ auth()->user()->id }}"></shopping-cart>
 @endsection
 

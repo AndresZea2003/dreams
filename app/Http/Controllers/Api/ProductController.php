@@ -12,7 +12,7 @@ class ProductController extends Controller
 {
     public function index(): JsonResponse
     {
-        $products = Product::paginate(6);
+        $products = Product::paginate(12);
         return response()->json($products, 200);
     }
 

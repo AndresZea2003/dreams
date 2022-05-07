@@ -7,7 +7,7 @@ import Dropdown from './components/Dropdown';
 import UsersTable from './components/UsersTable';
 import ProductsTable from './components/ProductsTable';
 import CardProduct from './components/CardProduct';
-import { RewindIcon } from '@heroicons/vue/solid';
+import { RewindIcon, MoonIcon } from '@heroicons/vue/solid';
 import { ShoppingCartIcon, StarIcon, ShoppingBagIcon } from '@heroicons/vue/outline';
 import ShoppingCart from './components/shoppingCart/ShoppingCart';
 import AddButton from './components/shoppingCart/AddButton';
@@ -28,6 +28,7 @@ const app = createApp({
         'shopping-cart-icon': ShoppingCartIcon,
         'star-icon': StarIcon,
         'shopping-bag-icon': ShoppingBagIcon,
+        'moon-icon': MoonIcon,
         'add-button': AddButton,
         'shopping-cart': ShoppingCart,
         'sub-nav': SubNav,
