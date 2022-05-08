@@ -6,13 +6,17 @@ use App\Contracts\WebchekoutContract;
 use App\Requests\CreateSessionRequest;
 use App\Requests\GetInformationRequest;
 use GuzzleHttp\Client;
+use GuzzleHttp\ClientInterface;
 
 class WebcheckoutService implements WebchekoutContract
 {
     public Client $client;
     public function __construct()
     {
+//        $this->client = new Client();
         $this->client = new Client();
+        $this->client = app(ClientInterface::class);
+
     }
 
     public function getInformation(?int $session_id)

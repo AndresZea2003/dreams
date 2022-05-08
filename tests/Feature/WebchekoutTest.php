@@ -49,6 +49,8 @@ class WebchekoutTest extends TestCase
         $this->assertEquals($session_id, $responseGetSession['requestId']);
         $this->assertArrayHasKey('status', $response);
         $this->assertEquals('APPROVED', $response['status']['status']);
+
+        dd($responseGetSession);
     }
     private function assertAuthSuccess(array $request): void
     {

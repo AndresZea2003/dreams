@@ -31,3 +31,5 @@ Route::resource('invoices', InvoiceController::class);
 Route::resource('payments', PaymentController::class);
 
 Route::post('payments/{payment}/try-payment', [PaymentController::class, 'TryPayment'])->name('payment.try-payment');
+
+Route::post('getRequestInformation', [PaymentController::class, 'GetRequestInformation'])->name('payment.get-request-information');

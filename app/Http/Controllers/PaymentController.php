@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\DTO\PaymentData;
+use App\Models\Invoice;
 use App\Models\Payment;
 use App\Services\WebcheckoutService;
 
@@ -23,6 +24,7 @@ class PaymentController extends Controller
         $user_id = auth()->user()->id;
         $payments = Payment::all()->where('user_id',$user_id)->toArray();
         $count = Payment::all()->where('user_id',$user_id)->count();
+//        dd($payments);
         return view('payments.index', compact('payments','count'));
     }
 
@@ -44,7 +46,7 @@ class PaymentController extends Controller
                     'total' => $request->input('amount'),
                 ],
             ],
-            'returnUrl' => 'http://dreams.test/payments/' . $request->input('invoice_id'),
+            'returnUrl' => route('payments.show', $request->input('invoice_id')),
             'expiration' => date('c', strtotime('+2 days')),
         ];
 
@@ -52,7 +54,7 @@ class PaymentController extends Controller
         $session_id = $webcheckout['requestId'];
         $process_url = $webcheckout['processUrl'];
 
-        $payment->Reference = $data['payment']['reference'];
+        $payment->reference = $data['payment']['reference'];
         $payment->description = $data['payment']['description'];
         $payment->amount = $request->input('amount');
         $payment->process_url = $process_url;
@@ -60,9 +62,9 @@ class PaymentController extends Controller
         $payment->user_id = auth()->user()->id;
         $payment->invoice_id = $request->input('invoice_id');
 
-        $responseGetSession = $webcheckout = (new WebcheckoutService())->getInformation($session_id);
+//        $responseGetSession = $webcheckout = (new WebcheckoutService())->getInformation($session_id);
 
-        $payment->status = $responseGetSession['status']['status'];
+        $payment->status = Invoice::PENDING;
 
         $payment->save();
 
@@ -103,5 +105,48 @@ class PaymentController extends Controller
     public function TryPayment(Payment $payment): RedirectResponse
     {
         return redirect($payment->attributesToArray()['process_url']);
+    }
+    public function getRequestInformation(Request $request)
+    {
+//        $responseGetSession = (new WebcheckoutService())->getInformation(54358);
+//        dd('hola');
+
+//        return redirect('http://dreams.test/payments/' . $payment->id);
+
+
+//        $payment = new Payment();
+//
+//        $data = [
+//            'payment' => [
+//                'reference' => $request->input('reference'),
+//                'description' => $request->input('description'),
+//                'amount' => [
+//                    'currency' => 'COP',
+//                    'total' => $request->input('amount'),
+//                ],
+//            ],
+//            'returnUrl' => route('payments.show', $request->input('invoice_id')),
+//            'expiration' => date('c', strtotime('+2 days')),
+//        ];
+//
+//        $webcheckout = (new WebcheckoutService())->createSession($data);
+//        $session_id = $webcheckout['requestId'];
+//        $process_url = $webcheckout['processUrl'];
+//
+//        $payment->reference = $data['payment']['reference'];
+//        $payment->description = $data['payment']['description'];
+//        $payment->amount = $request->input('amount');
+//        $payment->process_url = $process_url;
+//        $payment->request_id = $session_id;
+//        $payment->user_id = auth()->user()->id;
+//        $payment->invoice_id = $request->input('invoice_id');
+//
+//        $responseGetSession = $webcheckout = (new WebcheckoutService())->getInformation($session_id);
+//
+//        $payment->status = Invoice::PENDING;
+//
+//        $payment->save();
+//
+//        return redirect($process_url);
     }
 }
