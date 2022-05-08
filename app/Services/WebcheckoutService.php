@@ -16,7 +16,6 @@ class WebcheckoutService implements WebchekoutContract
 //        $this->client = new Client();
         $this->client = new Client();
         $this->client = app(ClientInterface::class);
-
     }
 
     public function getInformation(?int $session_id)

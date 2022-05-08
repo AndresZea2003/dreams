@@ -16,7 +16,6 @@
     <!--            </div>-->
     <!--        </div>-->
 
-
     <!--        <div class="bg-white py-4 px-4">-->
     <!--            <div class="grid grid-cols-3 gap-5">-->
     <!--                <p class="rounded-full bg-yellow-200 text-center">New</p>-->
@@ -44,20 +43,13 @@
     <!--        </div>-->
     <!--    </div>-->
 
-    <div
-        v-for="product in products"
-        :key="product.id"
-    >
-
+    <div v-for="product in products" :key="product.id">
         <div class="card flex flex-col justify-center">
             <a :href="`http://dreams.test/products/${product.id}`">
-                <div class="image"><img
-                    :src="`http://dreams.test/${product.photo}`"
-                    alt="">
-                </div>
+                <div class="image"><img :src="`http://dreams.test/${product.photo}`" alt="" /></div>
             </a>
             <span class="font-alatsi">{{ product.name }}</span>
-            <span class="price font-alatsi text-green-600 pb-1">${{ product.price }} COP</span>
+            <span class="price font-alatsi pb-1 text-green-600">${{ product.price }} COP</span>
             <div class="grid grid-cols-2">
                 <a :href="`http://dreams.test/products/${product.id}`">
                     <button
@@ -70,7 +62,7 @@
                     @click="actions.addToCart(product, user_id)"
                     class="focus:shadow-outline mx-5 rounded bg-zinc-800 py-2 px-4 text-2xl font-bold text-white hover:bg-opacity-90 focus:outline-none"
                 >
-                    <ShoppingCartIcon class="h-5 w-5 text-red-500" aria-hidden="true"/>
+                    <ShoppingCartIcon class="h-5 w-5 text-red-500" aria-hidden="true" />
                 </button>
             </div>
         </div>
@@ -80,18 +72,18 @@
 <script>
 import CsrfToken from './helpers/CsrfToken';
 import AddButton from './shoppingCart/AddButton';
-import {TrashIcon, ShoppingCartIcon, EyeIcon} from '@heroicons/vue/outline';
-import {actions} from '../use';
+import { TrashIcon, ShoppingCartIcon, EyeIcon } from '@heroicons/vue/outline';
+import { actions } from '../use';
 
 export default {
     name: 'CardProduct',
-    components: {TrashIcon, CsrfToken, ShoppingCartIcon, EyeIcon, AddButton},
+    components: { TrashIcon, CsrfToken, ShoppingCartIcon, EyeIcon, AddButton },
     props: {
-        products: {type: Array, required: true},
-        user_id: {type: Number, required: true},
+        products: { type: Array, required: true },
+        user_id: { type: Number, required: true },
     },
     setup() {
-        return {actions};
+        return { actions };
     },
 };
 </script>

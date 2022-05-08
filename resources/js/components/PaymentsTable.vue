@@ -1,71 +1,52 @@
 <script setup>
 import { ref } from 'vue';
 import { EyeIcon } from '@heroicons/vue/solid';
-import { ClockIcon, CurrencyDollarIcon } from '@heroicons/vue/outline'
+import { ClockIcon, CurrencyDollarIcon } from '@heroicons/vue/outline';
 
 const props = defineProps({
     payments: { type: Object, required: true },
-    count: { type: Number, required:true },
-    name: { type: String , required:true }
+    count: { type: Number, required: true },
+    name: { type: String, required: true },
 });
 
 const payments = ref(props.payments.data);
 const cont = ref(props.count);
 const name = ref(props.name);
-
 </script>
 <template>
     <div class="mt-5 flex justify-center">
         <div class="grid grid-cols-2">
             <div>
-                <div class="flex flex-col items-center mt-10">
-                    <CurrencyDollarIcon class="text-yellow-500 h-20 w-20" aria-hidden="true" />
-                    <div class="flex flex-col items-center my-2">
+                <div class="mt-10 flex flex-col items-center">
+                    <CurrencyDollarIcon class="h-20 w-20 text-yellow-500" aria-hidden="true" />
+                    <div class="my-2 flex flex-col items-center">
                         <span class="font-alatsi text-3xl">Pagos totales</span>
                     </div>
-                    <p class="text-xl">Actualmente se han realizado <span class="font-bold">{{ count }}</span> procesos de pago</p>
-
+                    <p class="text-xl">
+                        Actualmente se han realizado <span class="font-bold">{{ count }}</span> procesos de pago
+                    </p>
                 </div>
             </div>
             <div class="mr-20 mt-10">
-
                 <table class="overflow-hidden rounded-lg border border-gray-600 shadow">
                     <thead class="bg-neutral-800 text-white">
                         <tr>
-                            <th
-                                scope="col"
-                                class="py-3 pl-6 text-left text-sm font-bold uppercase tracking-wider"
-                            >
+                            <th scope="col" class="py-3 pl-6 text-left text-sm font-bold uppercase tracking-wider">
                                 Id
                             </th>
-                            <th
-                                scope="col"
-                                class="py-3 pl-6 text-left text-sm font-bold uppercase tracking-wider"
-                            >
+                            <th scope="col" class="py-3 pl-6 text-left text-sm font-bold uppercase tracking-wider">
                                 User
                             </th>
-                            <th
-                                scope="col"
-                                class="px-6 py-3 text-left text-sm font-bold uppercase tracking-wider"
-                            >
+                            <th scope="col" class="px-6 py-3 text-left text-sm font-bold uppercase tracking-wider">
                                 Reference
                             </th>
-                            <th
-                                scope="col"
-                                class="px-6 py-3 text-left text-sm font-bold uppercase tracking-wider"
-                            >
+                            <th scope="col" class="px-6 py-3 text-left text-sm font-bold uppercase tracking-wider">
                                 Description
                             </th>
-                            <th
-                                scope="col"
-                                class="px-6 py-3 text-center font-bold uppercase tracking-wider"
-                            >
+                            <th scope="col" class="px-6 py-3 text-center font-bold uppercase tracking-wider">
                                 Request id
                             </th>
-                            <th
-                                scope="col"
-                                class="px-6 py-3 text-left text-sm font-bold uppercase tracking-wider"
-                            >
+                            <th scope="col" class="px-6 py-3 text-left text-sm font-bold uppercase tracking-wider">
                                 Status
                             </th>
                             <th scope="col" class="relative px-6 py-3"></th>
@@ -88,13 +69,22 @@ const name = ref(props.name);
                             <td class="py-3 pl-6 text-center text-xs font-medium uppercase tracking-wider">
                                 {{ payment.request_id }}
                             </td>
-                            <td v-if="payment.status === 'APPROVED'" class="py-3 pl-6 text-left text-green-300 font-medium uppercase tracking-wider">
+                            <td
+                                v-if="payment.status === 'APPROVED'"
+                                class="py-3 pl-6 text-left font-medium uppercase tracking-wider text-green-300"
+                            >
                                 {{ payment.status }}
                             </td>
-                            <td v-if="payment.status === 'PENDING'" class="py-3 pl-6 text-left text-yellow-200 font-medium uppercase tracking-wider">
+                            <td
+                                v-if="payment.status === 'PENDING'"
+                                class="py-3 pl-6 text-left font-medium uppercase tracking-wider text-yellow-200"
+                            >
                                 {{ payment.status }}
                             </td>
-                            <td v-if="payment.status === 'REJECTED'" class="py-3 pl-6 text-left text-red-700 font-medium uppercase tracking-wider">
+                            <td
+                                v-if="payment.status === 'REJECTED'"
+                                class="py-3 pl-6 text-left font-medium uppercase tracking-wider text-red-700"
+                            >
                                 {{ payment.status }}
                             </td>
                             <td class="relative px-3 py-3">

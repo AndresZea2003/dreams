@@ -48,7 +48,7 @@ watch(products.value, () => calculateTotals());
     <div class="container mx-auto">
         <div class="mx-10">
             <div class="mx-60 gap-1 rounded-md bg-neutral-800 p-10 text-white drop-shadow-lg">
-                <div class="font-alatsi pb-5 flex justify-between border-b-2 border-black px-5 text-2xl">
+                <div class="font-alatsi flex justify-between border-b-2 border-black px-5 pb-5 text-2xl">
                     <p>Carrito ( {{ totalQuantity }} products )</p>
                     <button
                         v-if="products != 0"
@@ -131,9 +131,7 @@ watch(products.value, () => calculateTotals());
                                         <button
                                             class="focus:shadow-outline rounded bg-gray-600 py-2 px-4 font-bold text-white hover:bg-opacity-90 focus:outline-none"
                                         >
-                                            <a href="http://dreams.test/products">
-                                                Regresar a la tienda
-                                            </a>
+                                            <a href="http://dreams.test/products"> Regresar a la tienda </a>
                                         </button>
                                     </div>
                                 </td>

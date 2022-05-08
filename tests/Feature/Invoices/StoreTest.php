@@ -46,5 +46,4 @@ class StoreTest extends TestCase
 //        $invoice->total = $request->input('total');
 //        $invoice->status = $request->input('status');
     }
-
 }

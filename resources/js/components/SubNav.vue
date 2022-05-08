@@ -4,7 +4,7 @@
             <a :href="tienda">
                 <div :class="`flex ${textColor1} justify-center`">
                     Tienda
-                    <shopping-bag-icon class="mx-2 h-7 w-7"/>
+                    <shopping-bag-icon class="mx-2 h-7 w-7" />
                 </div>
             </a>
         </div>
@@ -19,10 +19,9 @@
                 <div :class="`flex ${textColor4} justify-center hover:cursor-pointer hover:text-green-300`">
                     <span class="flex">
                         Carrito
-                        <shopping-cart-icon class="mx-2 h-7 w-7"/>
+                        <shopping-cart-icon class="mx-2 h-7 w-7" />
                         <span class="font-bold">({{ totalQuantity }})</span>
                     </span>
-
                 </div>
             </a>
         </div>
@@ -30,20 +29,19 @@
             <a :href="historial">
                 <div :class="`flex ${textColor2} justify-center hover:cursor-pointer hover:text-green-300`">
                     Compras
-                    <ClockIcon class="mx-2 h-7 w-7"/>
+                    <ClockIcon class="mx-2 h-7 w-7" />
                 </div>
             </a>
         </div>
     </div>
-
 </template>
 <script setup>
-import {ShoppingCartIcon, StarIcon, ShoppingBagIcon, ClockIcon} from '@heroicons/vue/outline';
-import {ref} from 'vue';
-import {getCartProducts} from '../use';
+import { ShoppingCartIcon, StarIcon, ShoppingBagIcon, ClockIcon } from '@heroicons/vue/outline';
+import { ref } from 'vue';
+import { getCartProducts } from '../use';
 
 const props = defineProps({
-    user_id: {type: Number, required: true},
+    user_id: { type: Number, required: true },
 });
 
 const products = ref(getCartProducts(props.user_id));

@@ -6,7 +6,6 @@ use App\Http\Requests\UpdateInvoiceRequest;
 use App\Models\invoice;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
 
 class InvoiceController extends Controller

@@ -30,17 +30,15 @@ class ProductController extends Controller
         $products = $response->json();
 
         $product = new Product();
-        if( $request->hasFile('photo') )
-        {
+        if ($request->hasFile('photo')) {
             $file = $request->file('photo');
             $destinationPath = 'images/products/';
-            $fileName = time() . '-'. $file->getClientOriginalName();
-            $uploadSuccess = $request->file('photo')->move($destinationPath,$fileName);
-            $product->photo = $destinationPath.$fileName;
-        }else
-        {
+            $fileName = time() . '-' . $file->getClientOriginalName();
+            $uploadSuccess = $request->file('photo')->move($destinationPath, $fileName);
+            $product->photo = $destinationPath . $fileName;
+        } else {
             $product->photo = 'images/products/defaultFile.jpeg';
-        };
+        }
         $product->name = $request->input('name');
         $product->price = $request->input('price');
         $product->available = $request->input('available');

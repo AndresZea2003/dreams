@@ -22,10 +22,10 @@ class PaymentController extends Controller
 //        dd($payments);
 //        return view('payments.index', compact('payments'));
         $user_id = auth()->user()->id;
-        $payments = Payment::all()->where('user_id',$user_id)->toArray();
-        $count = Payment::all()->where('user_id',$user_id)->count();
+        $payments = Payment::all()->where('user_id', $user_id)->toArray();
+        $count = Payment::all()->where('user_id', $user_id)->count();
 //        dd($payments);
-        return view('payments.index', compact('payments','count'));
+        return view('payments.index', compact('payments', 'count'));
     }
 
     public function create()
@@ -112,7 +112,6 @@ class PaymentController extends Controller
 //        dd('hola');
 
 //        return redirect('http://dreams.test/payments/' . $payment->id);
-
 
 //        $payment = new Payment();
 //

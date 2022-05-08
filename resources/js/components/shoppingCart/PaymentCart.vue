@@ -151,8 +151,7 @@ console.log(payment.value);
                     ><br />
                     <span></span><br />
                     <span class="font-semibold">Precio total: </span><br />
-                    <span class="font-bold">${{ payment.amount }} COP</span
-                    ><br />
+                    <span class="font-bold">${{ payment.amount }} COP</span><br />
                 </p>
                 <div class="mt-5 flex justify-center">
                     <form :action="`http://dreams.test/payments/${payment.id}`" method="POST">

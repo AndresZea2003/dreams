@@ -11,8 +11,8 @@ use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Psr7\Response;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Tests\TestCase;
 use function route;
+use Tests\TestCase;
 
 class PaymentTest extends TestCase
 {
@@ -27,16 +27,16 @@ class PaymentTest extends TestCase
 
     public function testWebcheckoutCreateSessionMock()
     {
-        $processUrl = "https://checkout-co.placetopay.com/session/1/cc9b8690b1f7228c78b759ce27d7e80a";
+        $processUrl = 'https://checkout-co.placetopay.com/session/1/cc9b8690b1f7228c78b759ce27d7e80a';
         $response = json_encode([
-            "status" => [
-                "status" => "OK",
-                "reason" => "PC",
-                "message" => "La petición se ha procesado correctamente",
-                "date" => "2021-11-30T15:08:27-05:00"
+            'status' => [
+                'status' => 'OK',
+                'reason' => 'PC',
+                'message' => 'La petición se ha procesado correctamente',
+                'date' => '2021-11-30T15:08:27-05:00',
             ],
-            "requestId" => 1,
-            "processUrl" => $processUrl
+            'requestId' => 1,
+            'processUrl' => $processUrl,
         ]);
 
         $mock = new MockHandler([
@@ -45,7 +45,7 @@ class PaymentTest extends TestCase
 
         $handlerStack = HandlerStack::create($mock);
         $client = new Client(['handler' => $handlerStack]);
-        $this->app->bind(ClientInterface::class, fn() => $client);
+        $this->app->bind(ClientInterface::class, fn () => $client);
 
         $user = User::factory()->create()->assignRole('user');
         $invoice = Invoice::factory()->create([

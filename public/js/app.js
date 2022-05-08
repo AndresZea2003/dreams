@@ -21296,7 +21296,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
 
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"min-h-[10rem] w-72 cursor-pointer overflow-hidden rounded-md shadow-lg hover:shadow-white p-4\"><div class=\"bg-red-400\"><!--            &lt;img--><!--                src=&quot;https://ebani.com.co/wp-content/uploads/2021/08/Ebani-Colombia-tienda-online-de-decoracion-y-mobiliario-Maderkit-1-Ebani-Colombia-tienda-online-de-decoracion-y-mobiliario-Maderkit.jpg&quot;--><!--                alt=&quot;&quot;--><!--            /&gt;--><!--            &lt;img :src=&quot;{{ product.photo }}&quot; alt=&quot;&quot;&gt;--><div class=\"h-52 w-full bg-gray-200 flex justify-center items-center\"><p>da</p><img class=\"\" src=\"\" alt=\"\"></div></div><!--        &lt;div class=&quot;bg-white pt-4&quot;&gt;--><!--            &lt;div class=&quot;grid grid-cols-3 gap-5&quot;&gt;--><!--                &lt;p class=&quot;rounded-full bg-yellow-200 text-center&quot;&gt;New&lt;/p&gt;--><!--                &lt;p class=&quot;rounded-full bg-green-300 text-center&quot;&gt;ID &lt;/p&gt;--><!--            &lt;/div&gt;--><!--            &lt;h3 class=&quot;text-center text-2xl font-semibold text-black&quot;&gt;&lt;/h3&gt;--><!--            &lt;p class=&quot;text-center text-2xl font-semibold text-red-500&quot;&gt;$&lt;/p&gt;--><!--            &lt;p class=&quot;rounded-full bg-red-300 text-center&quot;&gt; Disponibles&lt;/p&gt;--><!--            &amp;lt;!&amp;ndash;                   &lt;p class=&quot;mt-4 text-lg font-thin&quot;&gt;Description: {{ $cription&#39;] }}&lt;/p&gt;&amp;ndash;&amp;gt;--><!--            &amp;lt;!&amp;ndash;                  &lt;p class=&quot;mt-4 text-lg font-thin&quot;&gt;Quantity: {{ $ntity&#39;] }}&lt;/p&gt;&amp;ndash;&amp;gt;--><!--            &lt;div class=&quot;mt-2 flex justify-between&quot;&gt;--><!--                &lt;button--><!--                    class=&quot;focus:shadow-outline mx-5 rounded bg-zinc-800 py-2 px-4 text-2xl font-bold text-white hover:bg-opacity-90 focus:outline-none&quot;--><!--                &gt;--><!--                    &lt;a href=&quot;&quot;&gt; ver &lt;/a&gt;--><!--                &lt;/button&gt;--><!--                &amp;lt;!&amp;ndash;                &lt;AddButton :product=&quot;product&quot; :user-id=&quot;userId&quot;&gt;&lt;/AddButton&gt;&amp;ndash;&amp;gt;--><!--                &lt;button--><!--                    @click=&quot;actions.addToCart(product, user_id)&quot;--><!--                    class=&quot;focus:shadow-outline mx-5 rounded bg-zinc-800 py-2 px-4 text-2xl font-bold text-white hover:bg-opacity-90 focus:outline-none&quot;--><!--                &gt;--><!--                    &lt;ShoppingCartIcon class=&quot;h-7 w-7 text-red-500&quot; aria-hidden=&quot;true&quot; /&gt;--><!--                &lt;/button&gt;--><!--            &lt;/div&gt;--><!--        &lt;/div&gt;--></div>", 1);
+var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"min-h-[10rem] w-72 cursor-pointer overflow-hidden rounded-md p-4 shadow-lg hover:shadow-white\"><div class=\"bg-red-400\"><!--            &lt;img--><!--                src=&quot;https://ebani.com.co/wp-content/uploads/2021/08/Ebani-Colombia-tienda-online-de-decoracion-y-mobiliario-Maderkit-1-Ebani-Colombia-tienda-online-de-decoracion-y-mobiliario-Maderkit.jpg&quot;--><!--                alt=&quot;&quot;--><!--            /&gt;--><!--            &lt;img :src=&quot;{{ product.photo }}&quot; alt=&quot;&quot;&gt;--><div class=\"flex h-52 w-full items-center justify-center bg-gray-200\"><p>da</p><img class=\"\" src=\"\" alt=\"\"></div></div><!--        &lt;div class=&quot;bg-white pt-4&quot;&gt;--><!--            &lt;div class=&quot;grid grid-cols-3 gap-5&quot;&gt;--><!--                &lt;p class=&quot;rounded-full bg-yellow-200 text-center&quot;&gt;New&lt;/p&gt;--><!--                &lt;p class=&quot;rounded-full bg-green-300 text-center&quot;&gt;ID &lt;/p&gt;--><!--            &lt;/div&gt;--><!--            &lt;h3 class=&quot;text-center text-2xl font-semibold text-black&quot;&gt;&lt;/h3&gt;--><!--            &lt;p class=&quot;text-center text-2xl font-semibold text-red-500&quot;&gt;$&lt;/p&gt;--><!--            &lt;p class=&quot;rounded-full bg-red-300 text-center&quot;&gt; Disponibles&lt;/p&gt;--><!--            &amp;lt;!&amp;ndash;                   &lt;p class=&quot;mt-4 text-lg font-thin&quot;&gt;Description: {{ $cription&#39;] }}&lt;/p&gt;&amp;ndash;&amp;gt;--><!--            &amp;lt;!&amp;ndash;                  &lt;p class=&quot;mt-4 text-lg font-thin&quot;&gt;Quantity: {{ $ntity&#39;] }}&lt;/p&gt;&amp;ndash;&amp;gt;--><!--            &lt;div class=&quot;mt-2 flex justify-between&quot;&gt;--><!--                &lt;button--><!--                    class=&quot;focus:shadow-outline mx-5 rounded bg-zinc-800 py-2 px-4 text-2xl font-bold text-white hover:bg-opacity-90 focus:outline-none&quot;--><!--                &gt;--><!--                    &lt;a href=&quot;&quot;&gt; ver &lt;/a&gt;--><!--                &lt;/button&gt;--><!--                &amp;lt;!&amp;ndash;                &lt;AddButton :product=&quot;product&quot; :user-id=&quot;userId&quot;&gt;&lt;/AddButton&gt;&amp;ndash;&amp;gt;--><!--                &lt;button--><!--                    @click=&quot;actions.addToCart(product, user_id)&quot;--><!--                    class=&quot;focus:shadow-outline mx-5 rounded bg-zinc-800 py-2 px-4 text-2xl font-bold text-white hover:bg-opacity-90 focus:outline-none&quot;--><!--                &gt;--><!--                    &lt;ShoppingCartIcon class=&quot;h-7 w-7 text-red-500&quot; aria-hidden=&quot;true&quot; /&gt;--><!--                &lt;/button&gt;--><!--            &lt;/div&gt;--><!--        &lt;/div&gt;--></div>", 1);
 
 var _hoisted_2 = {
   key: 0
@@ -21406,7 +21406,7 @@ var _hoisted_5 = {
   "class": "font-alatsi"
 };
 var _hoisted_6 = {
-  "class": "price font-alatsi text-green-600 pb-1"
+  "class": "price font-alatsi pb-1 text-green-600"
 };
 var _hoisted_7 = {
   "class": "grid grid-cols-2"
@@ -21704,11 +21704,11 @@ var _hoisted_2 = {
   "class": "grid grid-cols-2"
 };
 var _hoisted_3 = {
-  "class": "flex flex-col items-center mt-10"
+  "class": "mt-10 flex flex-col items-center"
 };
 
 var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
-  "class": "flex flex-col items-center my-2"
+  "class": "my-2 flex flex-col items-center"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
   "class": "font-alatsi text-3xl"
 }, "Pagos totales")], -1
@@ -21719,13 +21719,13 @@ var _hoisted_5 = {
   "class": "text-xl"
 };
 
-var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)("Actualmente se han realizado ");
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Actualmente se han realizado ");
 
 var _hoisted_7 = {
   "class": "font-bold"
 };
 
-var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" procesos de pago");
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" procesos de pago ");
 
 var _hoisted_9 = {
   "class": "mr-20 mt-10"
@@ -21781,15 +21781,15 @@ var _hoisted_17 = {
 };
 var _hoisted_18 = {
   key: 0,
-  "class": "py-3 pl-6 text-left text-green-300 font-medium uppercase tracking-wider"
+  "class": "py-3 pl-6 text-left font-medium uppercase tracking-wider text-green-300"
 };
 var _hoisted_19 = {
   key: 1,
-  "class": "py-3 pl-6 text-left text-yellow-200 font-medium uppercase tracking-wider"
+  "class": "py-3 pl-6 text-left font-medium uppercase tracking-wider text-yellow-200"
 };
 var _hoisted_20 = {
   key: 2,
-  "class": "py-3 pl-6 text-left text-red-700 font-medium uppercase tracking-wider"
+  "class": "py-3 pl-6 text-left font-medium uppercase tracking-wider text-red-700"
 };
 var _hoisted_21 = {
   "class": "relative px-3 py-3"
@@ -21801,7 +21801,7 @@ var _hoisted_23 = {
 };
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["CurrencyDollarIcon"], {
-    "class": "text-yellow-500 h-20 w-20",
+    "class": "h-20 w-20 text-yellow-500",
     "aria-hidden": "true"
   }), _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", _hoisted_5, [_hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.count), 1
   /* TEXT */
@@ -22965,7 +22965,7 @@ var _hoisted_3 = {
   "class": "mx-60 gap-1 rounded-md bg-neutral-800 p-10 text-white drop-shadow-lg"
 };
 var _hoisted_4 = {
-  "class": "font-alatsi pb-5 flex justify-between border-b-2 border-black px-5 text-2xl"
+  "class": "font-alatsi flex justify-between border-b-2 border-black px-5 pb-5 text-2xl"
 };
 var _hoisted_5 = {
   "class": "pt-5"

@@ -93,7 +93,7 @@
         </Menu>
     </div>
     <form id="logout" class="hidden" action="http://dreams.test/logout" method="POST"><CsrfToken /></form>
-<!--    <form id="logout" class="hidden" :action="routes.logout.uri" method="POST"><CsrfToken /></form>-->
+    <!--    <form id="logout" class="hidden" :action="routes.logout.uri" method="POST"><CsrfToken /></form>-->
 </template>
 
 <script>
