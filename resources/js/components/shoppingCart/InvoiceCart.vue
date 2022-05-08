@@ -43,7 +43,7 @@ console.log(items);
                                         <div>
                                             <img
                                                 class="h-12 w-12 rounded-full"
-                                                src="https://ebani.com.co/wp-content/uploads/2021/08/Ebani-Colombia-tienda-online-de-decoracion-y-mobiliario-Maderkit-1-Ebani-Colombia-tienda-online-de-decoracion-y-mobiliario-Maderkit.jpg"
+                                                :src="`http://dreams.test/${item.photo}`"
                                                 :alt="`imagen del producto ${item.id}`"
                                             />
                                         </div>

@@ -10,6 +10,7 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
+            $table->string('photo')->default('images/products/defaultFile.jpeg')->nullable();
             $table->string('name', 100);
             $table->tinyText('description');
             $table->integer('price');

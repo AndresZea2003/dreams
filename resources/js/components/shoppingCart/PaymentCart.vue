@@ -26,7 +26,7 @@ console.log(payment.value);
             <div class="h-full bg-gray-400 p-10">
                 <div class="flex justify-center">
                     <a
-                        href="{{ route('home') }}"
+                        href="http://dreams.test"
                         class="font-fugaz-one pt-2 pb-10 text-6xl text-gray-200 hover:text-gray-800"
                     >
                         <div class="flex">
@@ -151,7 +151,7 @@ console.log(payment.value);
                     ><br />
                     <span></span><br />
                     <span class="font-semibold">Precio total: </span><br />
-                    <span>{{ payment.amount }}</span
+                    <span class="font-bold">${{ payment.amount }} COP</span
                     ><br />
                 </p>
                 <div class="mt-5 flex justify-center">

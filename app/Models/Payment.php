@@ -19,4 +19,6 @@ class Payment extends Model
         'user_id',
         'invoice_id',
     ];
+
+//    protected $dateFormat = 'U';
 }

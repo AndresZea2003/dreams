@@ -40,7 +40,7 @@
                                 </div>
                             </div>
                         </a>
-                        <a class="bg-red-600 shadow-2xl rounded-md" href="{{ route('users.index') }}">
+                        <a class="bg-red-600 shadow-2xl rounded-md" href="{{ route('admin.payments.index') }}">
                             <div>
                                 <div class="flex justify-center">
                                     <span class="font-alatsi text-2xl">Pagos</span>

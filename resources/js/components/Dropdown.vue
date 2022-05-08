@@ -56,8 +56,8 @@
                                     'group flex w-full items-center rounded-md px-2 py-2 text-sm',
                                 ]"
                             >
-                                <BookOpenIcon :active="active" class="mr-2 h-5 w-5" aria-hidden="true" />
-                                Payments
+                                <ClockIcon :active="active" class="mr-2 h-5 w-5" aria-hidden="true" />
+                                Historial
                             </a>
                         </MenuItem>
                         <MenuItem v-if="panelRoute" v-slot="{ active }">
@@ -92,7 +92,8 @@
             </transition>
         </Menu>
     </div>
-    <form id="logout" class="hidden" :action="routes.logout.uri" method="POST"><CsrfToken /></form>
+    <form id="logout" class="hidden" action="http://dreams.test/logout" method="POST"><CsrfToken /></form>
+<!--    <form id="logout" class="hidden" :action="routes.logout.uri" method="POST"><CsrfToken /></form>-->
 </template>
 
 <script>
@@ -108,6 +109,7 @@ import {
     ArchiveIcon,
     BookOpenIcon,
 } from '@heroicons/vue/solid';
+import { ClockIcon } from '@heroicons/vue/outline';
 
 export default {
     props: {
@@ -129,6 +131,7 @@ export default {
         UserIcon,
         ArchiveIcon,
         BookOpenIcon,
+        ClockIcon,
         CsrfToken,
     },
     setup() {
