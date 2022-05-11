@@ -55,7 +55,7 @@
                                 </div>
                             </div>
                         </a>
-                        <a class="bg-green-600 shadow-2xl rounded-md" href="{{ route('users.index') }}">
+                        <a class="bg-green-600 shadow-2xl rounded-md" href="{{ route('imports-exports') }}">
                             <div>
                                 <div class="flex justify-center">
                                     <span class="font-alatsi text-2xl">Imports / Exports</span>

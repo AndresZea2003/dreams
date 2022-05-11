@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ImportController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProductController;
@@ -36,3 +37,9 @@ Route::resource('payments', PaymentController::class);
 Route::post('payments/{payment}/try-payment', [PaymentController::class, 'TryPayment'])->name('payment.try-payment');
 
 Route::post('getRequestInformation', [PaymentController::class, 'GetRequestInformation'])->name('payment.get-request-information');
+
+Route::view('/imports-exports','imports-exports')->name('imports-exports');
+
+Route::view('/imports', 'imports')->name('imports');
+
+Route::post('/imports', [ImportController::class, 'import']);

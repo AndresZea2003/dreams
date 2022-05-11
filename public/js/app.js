@@ -21020,7 +21020,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   props: {
     product: {
-      type: String
+      type: Object
     },
     userId: {
       type: Number
@@ -21295,12 +21295,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
 
-
-var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"min-h-[10rem] w-72 cursor-pointer overflow-hidden rounded-md p-4 shadow-lg hover:shadow-white\"><div class=\"bg-red-400\"><!--            &lt;img--><!--                src=&quot;https://ebani.com.co/wp-content/uploads/2021/08/Ebani-Colombia-tienda-online-de-decoracion-y-mobiliario-Maderkit-1-Ebani-Colombia-tienda-online-de-decoracion-y-mobiliario-Maderkit.jpg&quot;--><!--                alt=&quot;&quot;--><!--            /&gt;--><!--            &lt;img :src=&quot;{{ product.photo }}&quot; alt=&quot;&quot;&gt;--><div class=\"flex h-52 w-full items-center justify-center bg-gray-200\"><p>da</p><img class=\"\" src=\"\" alt=\"\"></div></div><!--        &lt;div class=&quot;bg-white pt-4&quot;&gt;--><!--            &lt;div class=&quot;grid grid-cols-3 gap-5&quot;&gt;--><!--                &lt;p class=&quot;rounded-full bg-yellow-200 text-center&quot;&gt;New&lt;/p&gt;--><!--                &lt;p class=&quot;rounded-full bg-green-300 text-center&quot;&gt;ID &lt;/p&gt;--><!--            &lt;/div&gt;--><!--            &lt;h3 class=&quot;text-center text-2xl font-semibold text-black&quot;&gt;&lt;/h3&gt;--><!--            &lt;p class=&quot;text-center text-2xl font-semibold text-red-500&quot;&gt;$&lt;/p&gt;--><!--            &lt;p class=&quot;rounded-full bg-red-300 text-center&quot;&gt; Disponibles&lt;/p&gt;--><!--            &amp;lt;!&amp;ndash;                   &lt;p class=&quot;mt-4 text-lg font-thin&quot;&gt;Description: {{ $cription&#39;] }}&lt;/p&gt;&amp;ndash;&amp;gt;--><!--            &amp;lt;!&amp;ndash;                  &lt;p class=&quot;mt-4 text-lg font-thin&quot;&gt;Quantity: {{ $ntity&#39;] }}&lt;/p&gt;&amp;ndash;&amp;gt;--><!--            &lt;div class=&quot;mt-2 flex justify-between&quot;&gt;--><!--                &lt;button--><!--                    class=&quot;focus:shadow-outline mx-5 rounded bg-zinc-800 py-2 px-4 text-2xl font-bold text-white hover:bg-opacity-90 focus:outline-none&quot;--><!--                &gt;--><!--                    &lt;a href=&quot;&quot;&gt; ver &lt;/a&gt;--><!--                &lt;/button&gt;--><!--                &amp;lt;!&amp;ndash;                &lt;AddButton :product=&quot;product&quot; :user-id=&quot;userId&quot;&gt;&lt;/AddButton&gt;&amp;ndash;&amp;gt;--><!--                &lt;button--><!--                    @click=&quot;actions.addToCart(product, user_id)&quot;--><!--                    class=&quot;focus:shadow-outline mx-5 rounded bg-zinc-800 py-2 px-4 text-2xl font-bold text-white hover:bg-opacity-90 focus:outline-none&quot;--><!--                &gt;--><!--                    &lt;ShoppingCartIcon class=&quot;h-7 w-7 text-red-500&quot; aria-hidden=&quot;true&quot; /&gt;--><!--                &lt;/button&gt;--><!--            &lt;/div&gt;--><!--        &lt;/div&gt;--></div>", 1);
-
-var _hoisted_2 = {
+var _hoisted_1 = {
   key: 0
 };
+
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
+/* HOISTED */
+);
 
 var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
 /* HOISTED */
@@ -21322,59 +21323,55 @@ var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 /* HOISTED */
 );
 
-var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
-/* HOISTED */
-);
-
-var _hoisted_9 = {
+var _hoisted_8 = {
   key: 1
 };
 
-var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "ME ESTAS VIENDO", -1
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "ME ESTAS VIENDO", -1
 /* HOISTED */
 );
 
-var _hoisted_11 = [_hoisted_10];
+var _hoisted_10 = [_hoisted_9];
 
-var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("br", null, null, -1
 /* HOISTED */
 );
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [_hoisted_1, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     onClick: $setup.add,
     "class": "my-10 bg-red-400"
   }, "Add Button"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("p", null, "Datos agregados al carrito: " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($setup.counter), 1
   /* TEXT */
-  ), $setup.counter >= 10 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_2, "Logrado :D")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  ), $setup.counter >= 10 ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("p", _hoisted_1, "Logrado :D")) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     onClick: _cache[0] || (_cache[0] = function ($event) {
       return $setup.counter -= 1;
     }),
     "class": "my-10 bg-red-400"
-  }, "Delete Button"), _hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  }, "Delete Button"), _hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     onClick: $setup.togglez,
     "class": "my-10 bg-green-400"
-  }, "Mostrar"), _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  }, "Mostrar"), _hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     onClick: _cache[1] || (_cache[1] = function ($event) {
       return $setup.alerta('Hola');
     }),
     "class": "my-10 bg-yellow-400"
-  }, "Hola"), _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  }, "Hola"), _hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     onClick: _cache[2] || (_cache[2] = function ($event) {
       return $setup.alerta('Adios');
     }),
     "class": "my-10 bg-pink-400"
-  }, "Adios"), _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  }, "Adios"), _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     onClick: _cache[3] || (_cache[3] = function ($event) {
       return $setup.addLocal();
     }),
     "class": "my-10 bg-pink-400"
-  }, "Agg Nombre a localStorage"), _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+  }, "Agg Nombre a localStorage"), _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     onClick: _cache[4] || (_cache[4] = function ($event) {
       return _ctx.getLocal();
     }),
     "class": "my-10 bg-pink-400"
-  }, "Mostrar todos los nombres de localStorage"), _hoisted_8, $setup.mostrar === true ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_9, _hoisted_11)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_12, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["AddButton"])], 64
+  }, "Mostrar todos los nombres de localStorage"), _hoisted_7, $setup.mostrar === true ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_8, _hoisted_10)) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true), _hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["AddButton"])], 64
   /* STABLE_FRAGMENT */
   );
 }
