@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ExportController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ImportController;
 use App\Http\Controllers\InvoiceController;
@@ -43,3 +44,7 @@ Route::view('/imports-exports','imports-exports')->name('imports-exports');
 Route::view('/imports', 'imports')->name('imports');
 
 Route::post('/imports', [ImportController::class, 'import']);
+
+Route::view('/exports', 'exports')->name('exports');
+
+Route::get('/export-download', [ExportController::class, 'export'])->name('export-download');

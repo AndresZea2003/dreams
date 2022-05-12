@@ -17,7 +17,7 @@
                                 </div>
                             </div>
                         </a>
-                       <a class="bg-green-600  shadow-2xl rounded-md hover:text-white hover:scale-90 transition duration-300" href="{{ route('users.index') }}">
+                       <a class="bg-green-600  shadow-2xl rounded-md hover:text-white hover:scale-90 transition duration-300" href="{{ route('exports') }}">
                             <div>
                                 <div class="flex flex-col justify-center items-center">
                                     <span class="font-alatsi text-2xl">Exports</span>
