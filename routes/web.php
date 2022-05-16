@@ -31,7 +31,6 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
             Route::resource('users', UserController::class);
             Route::patch('users/{user}/toggle-status', [UserController::class, 'toggle'])->name('user-status.toggle');
             Route::view('/imports', 'imports')->name('imports');
-            Route::view('/imports-exports','imports-exports')->name('imports-exports');
             Route::post('/imports', [ImportController::class, 'import']);
             Route::view('/exports', 'exports')->name('exports');
             Route::get('/export-download', [ExportController::class, 'export'])->name('export-download');
