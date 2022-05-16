@@ -28,11 +28,6 @@ class PaymentController extends Controller
         return view('payments.index', compact('payments', 'count'));
     }
 
-    public function create()
-    {
-        //
-    }
-
     public function store(Request $request): RedirectResponse
     {
         $payment = new Payment();
@@ -76,10 +71,6 @@ class PaymentController extends Controller
         return view('payments.show', compact('payment'));
     }
 
-    public function edit($id)
-    {
-        //
-    }
 
     public function update(Request $request, Payment $payment): RedirectResponse
     {
@@ -98,10 +89,6 @@ class PaymentController extends Controller
         return redirect('http://dreams.test/payments/' . $payment->id);
     }
 
-    public function destroy($id)
-    {
-        //
-    }
     public function TryPayment(Payment $payment): RedirectResponse
     {
         return redirect($payment->attributesToArray()['process_url']);

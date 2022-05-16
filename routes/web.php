@@ -17,39 +17,47 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 
     Route::group(['middleware' => ['user.enabled']], function () {
         Route::resource('home', HomeController::class);
-//        Route::view('/home', 'home')->name('home');
         Route::get('/home', [HomeController::class, 'index'])->name('home');
         Route::view('/profile', 'profile')->name('profile');
         Route::resource('products', ProductController::class);
         Route::view('/shop', 'shop')->name('shop');
         Route::view('/payment', 'payment')->name('payment');
+        Route::resource('payments', PaymentController::class);
+        Route::post('payments/{payment}/try-payment', [PaymentController::class, 'TryPayment'])->name('payment.try-payment');
+        Route::post('getRequestInformation', [PaymentController::class, 'GetRequestInformation'])->name('payment.get-request-information');
 
         Route::group(['middleware' => ['role:admin']], function () {
             Route::view('panel', 'panel')->name('panel');
             Route::resource('users', UserController::class);
             Route::patch('users/{user}/toggle-status', [UserController::class, 'toggle'])->name('user-status.toggle');
+            Route::view('/imports', 'imports')->name('imports');
+            Route::view('/imports-exports','imports-exports')->name('imports-exports');
+            Route::post('/imports', [ImportController::class, 'import']);
+            Route::view('/exports', 'exports')->name('exports');
+            Route::get('/export-download', [ExportController::class, 'export'])->name('export-download');
+            Route::post('/update-imports', [ImportController::class, 'updateImport'])->name('update-imports');
+            Route::get('/reports', [ReportController::class, 'index'])->name('reports.index');
+            Route::post('/invoices', [InvoiceController::class, 'store'])->name('invoices.store');
+            Route::get('/invoices/{invoice}', [InvoiceController::class, 'show'])->name('invoices.show');
         });
     });
 });
 
-Route::resource('invoices', InvoiceController::class);
 
-Route::resource('payments', PaymentController::class);
 
-Route::post('payments/{payment}/try-payment', [PaymentController::class, 'TryPayment'])->name('payment.try-payment');
 
-Route::post('getRequestInformation', [PaymentController::class, 'GetRequestInformation'])->name('payment.get-request-information');
 
-Route::view('/imports-exports','imports-exports')->name('imports-exports');
 
-Route::view('/imports', 'imports')->name('imports');
 
-Route::post('/imports', [ImportController::class, 'import']);
 
-Route::view('/exports', 'exports')->name('exports');
 
-Route::get('/export-download', [ExportController::class, 'export'])->name('export-download');
 
-Route::post('/update-imports', [ImportController::class, 'updateImport'])->name('update-imports');
 
-Route::get('/reports', [ReportController::class, 'index'])->name('reports.index');
+
+
+
+
+
+
+
+
