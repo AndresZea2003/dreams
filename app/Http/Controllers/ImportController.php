@@ -6,11 +6,12 @@ use App\Imports\ProductImport;
 use App\Imports\UpdateProductImport;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 use Maatwebsite\Excel\Facades\Excel;
 
 class ImportController extends Controller
 {
-    public function index()
+    public function index():View
     {
         return view('imports');
     }
@@ -24,15 +25,15 @@ class ImportController extends Controller
 
     public function updateImport(Request $request)
     {
-        $products = Excel::toCollection(new ProductImport(), $request->file('products'));
+        $products = Excel::toCollection(new UpdateProductImport(), $request->file('products'));
 
         foreach ($products[0] as $product) {
-            Product::where('id', $product['id'])->update
+            Product::where('id', $product[0])->update
             ([
-                'name' => $product['name'],
-                'description' => $product['description'],
-                'price' => $product['price'],
-                'available' => $product['available'],
+                'name' => $product[2],
+                'description' => $product[3],
+                'price' => $product[4],
+                'available' => $product[5],
             ]);
         }
         return redirect()->route('imports')->with('info', 'Importación realizada con éxito');
