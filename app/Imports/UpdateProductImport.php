@@ -7,7 +7,7 @@ use Maatwebsite\Excel\Concerns\ToModel;
 
 class UpdateProductImport implements ToModel
 {
-    public function model(array $row)
+    public function model(array $row): Product
     {
         return new Product([
             'photo' => 'images/products/defaultFile.jpeg',
@@ -28,7 +28,7 @@ class UpdateProductImport implements ToModel
         ];
     }
 
-    public function uniqueBy()
+    public function uniqueBy(): string
     {
         return 'name';
     }

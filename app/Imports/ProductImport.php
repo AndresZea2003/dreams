@@ -3,7 +3,6 @@
 namespace App\Imports;
 
 use App\Models\Product;
-use Illuminate\Validation\Rule;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 use Maatwebsite\Excel\Concerns\WithUpserts;
@@ -11,7 +10,7 @@ use Maatwebsite\Excel\Concerns\WithValidation;
 
 class ProductImport implements ToModel, WithHeadingRow, WithValidation, WithUpserts
 {
-    public function model(array $row)
+    public function model(array $row): Product
     {
         return new Product([
             'photo' => 'images/products/defaultFile.jpeg',
@@ -32,7 +31,7 @@ class ProductImport implements ToModel, WithHeadingRow, WithValidation, WithUpse
         ];
     }
 
-    public function uniqueBy()
+    public function uniqueBy(): string
     {
         return 'name';
     }

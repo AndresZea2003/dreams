@@ -25,7 +25,7 @@ class InvoiceController extends Controller
         return redirect(route('invoices.show' . $id, $invoice));
     }
 
-    public function show(invoice $invoice): view
+    public function show(invoice $invoice): View
     {
         return view('invoices.show', compact('invoice'));
     }

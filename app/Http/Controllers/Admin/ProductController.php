@@ -7,17 +7,16 @@ use App\Http\Requests\Admin\Products\StoreProductRequest;
 use App\Http\Requests\Admin\Products\UpdateProductRequest;
 use App\Models\Product;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Support\Facades\Http;
 use Illuminate\View\View;
 
 class ProductController extends Controller
 {
-    public function index(): view
+    public function index(): View
     {
         return view('admin.products.index');
     }
 
-    public function create(): view
+    public function create(): View
     {
         return view('admin.products.create');
     }
@@ -44,12 +43,12 @@ class ProductController extends Controller
         return redirect(route('admin.products.store', $product));
     }
 
-    public function show(Product $product): view
+    public function show(Product $product): View
     {
         return view('admin.products.show', compact('product'));
     }
 
-    public function edit(Product $product): view
+    public function edit(Product $product): View
     {
         return view('admin.products.edit', compact('product'));
     }

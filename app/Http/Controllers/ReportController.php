@@ -7,11 +7,12 @@ use App\Models\Payment;
 use App\Models\Product;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
+use Illuminate\View\View;
 
 class ReportController extends Controller
 {
 
-    public function index()
+    public function index(): View
     {
         $paymentsCount = Payment::all()->count();
         $paymentsRejected = Payment::all()->where('status','REJECTED')->count();

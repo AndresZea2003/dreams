@@ -8,13 +8,13 @@ use function view;
 
 class ProductController extends Controller
 {
-    public function index(): view
+    public function index(): View
     {
         $products = Product::search()->paginate(12);
         return view('products.index', compact('products'));
     }
 
-    public function show(Product $product): view
+    public function show(Product $product): View
     {
         return view('products.show', compact('product'));
     }

@@ -9,13 +9,11 @@ use App\Services\WebcheckoutService;
 
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redirect;
 use Illuminate\View\View;
-use phpDocumentor\Reflection\DocBlock\Tags\Reference\Reference;
 
 class PaymentController extends Controller
 {
-    public function index(): view
+    public function index(): View
     {
         $payments = PaymentData::collection(Payment::paginate(7))->toArray();
 //        $links = Payment::paginate(2)->links();
@@ -66,7 +64,7 @@ class PaymentController extends Controller
         return redirect($process_url);
     }
 
-    public function show(Payment $payment): view
+    public function show(Payment $payment): View
     {
         return view('payments.show', compact('payment'));
     }

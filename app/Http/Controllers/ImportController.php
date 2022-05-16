@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Imports\ProductImport;
 use App\Imports\UpdateProductImport;
 use App\Models\Product;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use Maatwebsite\Excel\Facades\Excel;
@@ -16,14 +17,14 @@ class ImportController extends Controller
         return view('imports');
     }
 
-    public function import(Request $request)
+    public function import(Request $request): RedirectResponse
     {
         Excel::import(new ProductImport(), $request->file('products'));
 
         return redirect(route('imports'))->with('succes', 'All good');
     }
 
-    public function updateImport(Request $request)
+    public function updateImport(Request $request): RedirectResponse
     {
         $products = Excel::toCollection(new UpdateProductImport(), $request->file('products'));
 
