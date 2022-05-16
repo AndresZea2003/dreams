@@ -783,6 +783,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .flex-wrap{
   flex-wrap: wrap;
 }
+.items-end{
+  align-items: flex-end;
+}
 .items-center{
   align-items: center;
 }
@@ -1043,6 +1046,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(107 114 128 / var(--tw-bg-opacity));
 }
+.bg-pink-600{
+  --tw-bg-opacity: 1;
+  background-color: rgb(219 39 119 / var(--tw-bg-opacity));
+}
+.bg-sky-400{
+  --tw-bg-opacity: 1;
+  background-color: rgb(56 189 248 / var(--tw-bg-opacity));
+}
+.bg-emerald-400{
+  --tw-bg-opacity: 1;
+  background-color: rgb(52 211 153 / var(--tw-bg-opacity));
+}
 .bg-\[url\(\'https\:\/\/images\.pexels\.com\/photos\/1536286\/pexels-photo-1536286\.jpeg\?auto\=compress\&cs\=tinysrgb\&dpr\=2\&h\=750\&w\=1260\'\)\]{
   background-image: url('https://images.pexels.com/photos/1536286/pexels-photo-1536286.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
 }
@@ -1192,6 +1207,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pb-5{
   padding-bottom: 1.25rem;
+}
+.pb-2{
+  padding-bottom: 0.5rem;
 }
 .text-left{
   text-align: left;

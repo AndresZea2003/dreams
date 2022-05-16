@@ -6,6 +6,7 @@ use App\Http\Controllers\ImportController;
 use App\Http\Controllers\InvoiceController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ReportController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -50,3 +51,5 @@ Route::view('/exports', 'exports')->name('exports');
 Route::get('/export-download', [ExportController::class, 'export'])->name('export-download');
 
 Route::post('/update-imports', [ImportController::class, 'updateImport'])->name('update-imports');
+
+Route::get('/reports', [ReportController::class, 'index'])->name('reports.index');

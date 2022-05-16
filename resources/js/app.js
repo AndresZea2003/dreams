@@ -15,7 +15,8 @@ import SubNav from './components/SubNav';
 import InvoiceCart from './components/shoppingCart/InvoiceCart';
 import PaymentCart from './components/shoppingCart/PaymentCart';
 import PaymentsTable from './components/PaymentsTable';
-
+import ReportProducts from './components/reports/ReportProducts';
+import ReportUsers from './components/reports/ReportUsers';
 const app = createApp({
     components: {
         'app': App,
@@ -35,6 +36,8 @@ const app = createApp({
         'invoice-cart': InvoiceCart,
         'payment-cart': PaymentCart,
         'payments-table': PaymentsTable,
+        'report-products': ReportProducts,
+        'report-users': ReportUsers,
     },
 });
 app.mount('#app');

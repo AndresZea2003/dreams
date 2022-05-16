@@ -24,13 +24,6 @@
                                 </div>
                             </div>
                         </a>
-                        <a class="col-span-2 bg-green-600  shadow-2xl rounded-md hover:text-white hover:scale-90 transition duration-300" href="{{ route('users.index') }}">
-                            <div>
-                                <div class="flex flex-col justify-center items-center">
-                                    <span class="font-alatsi text-2xl">Reportes</span>
-                                </div>
-                            </div>
-                        </a>
                     </div>
                 </div>
             </div>

@@ -9,7 +9,7 @@
                     <div class="flex flex-col items-center">
                         <span class="font-alatsi text-2xl">Panel Administrador</span>
                     </div>
-                    <div class="grid grid-cols-2 gap-10 mt-10">
+                    <div class="grid grid-cols-3 gap-10 mt-10">
                         <a class="bg-blue-600 shadow-2xl rounded-md" href="{{ route('users.index') }}">
                             <div>
                                 <div class="flex justify-center">
@@ -59,6 +59,21 @@
                             <div>
                                 <div class="flex justify-center">
                                     <span class="font-alatsi text-2xl">Imports / Exports</span>
+                                </div>
+                                <div class="wrapper1 mt-10">
+                                    <div class="circle1"></div>
+                                    <div class="circle1"></div>
+                                    <div class="circle1"></div>
+                                    <div class="shadow1"></div>
+                                    <div class="shadow1"></div>
+                                    <div class="shadow1"></div>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="bg-pink-600 shadow-2xl rounded-md" href="{{ route('reports.index') }}">
+                            <div>
+                                <div class="flex justify-center">
+                                    <span class="font-alatsi text-2xl">Reportes</span>
                                 </div>
                                 <div class="wrapper1 mt-10">
                                     <div class="circle1"></div>
