@@ -3,11 +3,10 @@ import { ref } from 'vue';
 const props = defineProps({
     users: { type: String, required: true },
 });
-const userRecent = ref(JSON.parse(props.users).pop())
+const userRecent = ref(JSON.parse(props.users).pop());
 </script>
 <template>
     <div>
-        {{ userRecent.name}}
+        {{ userRecent.name }}
     </div>
 </template>
-

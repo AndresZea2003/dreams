@@ -69,7 +69,6 @@ class PaymentController extends Controller
         return view('payments.show', compact('payment'));
     }
 
-
     public function update(Request $request, Payment $payment): RedirectResponse
     {
         $session_id = $payment->attributesToArray()['request_id'];

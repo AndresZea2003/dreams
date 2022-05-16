@@ -12,7 +12,7 @@ use Maatwebsite\Excel\Facades\Excel;
 
 class ImportController extends Controller
 {
-    public function index():View
+    public function index(): View
     {
         return view('imports');
     }
@@ -29,8 +29,7 @@ class ImportController extends Controller
         $products = Excel::toCollection(new UpdateProductImport(), $request->file('products'));
 
         foreach ($products[0] as $product) {
-            Product::where('id', $product[0])->update
-            ([
+            Product::where('id', $product[0])->update([
                 'name' => $product[2],
                 'description' => $product[3],
                 'price' => $product[4],

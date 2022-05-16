@@ -2,14 +2,10 @@
 
 namespace Tests\Feature\Mocks;
 
-use App\Exports\ProductsExport;
-use App\Imports\ProductImport;
 use App\Models\User;
 use Database\Seeders\RolesAndPermissionsSeeder;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Http\UploadedFile;
-use Maatwebsite\Excel\Facades\Excel;
 use Tests\TestCase;
 
 class ImportTest extends TestCase
@@ -37,8 +33,8 @@ class ImportTest extends TestCase
 
         $this->assertDatabaseCount('products', 1);
         $this->assertDatabaseHas('products', [
-            'name' => "Import",
-            'description' => "descript1",
+            'name' => 'Import',
+            'description' => 'descript1',
             'price' => 777777,
             'available' => 22,
             'disabled_at' => null,
@@ -58,5 +54,4 @@ class ImportTest extends TestCase
         $response = $this->actingAs($user)->get(route('imports'));
         $response->assertStatus(403);
     }
-
 }

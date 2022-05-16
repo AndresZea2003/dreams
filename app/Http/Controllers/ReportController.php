@@ -11,13 +11,12 @@ use Illuminate\View\View;
 
 class ReportController extends Controller
 {
-
     public function index(): View
     {
         $paymentsCount = Payment::all()->count();
-        $paymentsRejected = Payment::all()->where('status','REJECTED')->count();
-        $paymentsPending = Payment::all()->where('status','PENDING')->count();
-        $paymentsApproved = Payment::all()->where('status','APPROVED')->count();
+        $paymentsRejected = Payment::all()->where('status', 'REJECTED')->count();
+        $paymentsPending = Payment::all()->where('status', 'PENDING')->count();
+        $paymentsApproved = Payment::all()->where('status', 'APPROVED')->count();
         $payments = PaymentData::collection(Payment::paginate(7))->toArray();
 
         $productsCount = Product::all()->count();
@@ -37,8 +36,6 @@ class ReportController extends Controller
         $userRecent = User::all()->sortByDesc('created_at')->take(1)->toJson();
         $users = User::all();
 
-
-
         return view('reports.index', compact(
             'payments',
             'paymentsCount',
@@ -53,6 +50,7 @@ class ReportController extends Controller
             'usersDisabled',
             'usersVerified',
             'userRecent',
-            'users'));
+            'users'
+        ));
     }
 }

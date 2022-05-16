@@ -85,7 +85,7 @@
                             {{ product.quantity }}
                         </td>
                         <td class="relative px-3 py-3">
-                            <form :action="'http://dreams.test/admin/products/'+ product.id +'/toggle'" method="POST">
+                            <form :action="'http://dreams.test/admin/products/' + product.id + '/toggle'" method="POST">
                                 <CsrfToken />
                                 <input type="hidden" name="_method" value="PATCH" />
                                 <button
@@ -182,8 +182,7 @@ export default {
             });
         };
         const toggle = (id) => {
-
-            axios.patch('http://dreams.test/admin/products/'+ id +'/toggle').then(() => {
+            axios.patch('http://dreams.test/admin/products/' + id + '/toggle').then(() => {
                 getProducts();
             });
         };
