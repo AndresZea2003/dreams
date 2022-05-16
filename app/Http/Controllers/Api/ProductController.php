@@ -52,14 +52,4 @@ class ProductController extends Controller
         $product->delete();
         return response()->json(null, 204);
     }
-    public function toggle(Product $product)
-    {
-        if (!$product->disabled_at) {
-            $product->disabled_at = now();
-        } else {
-            $product->disabled_at = null;
-        }
-
-        $product->save();
-    }
 }

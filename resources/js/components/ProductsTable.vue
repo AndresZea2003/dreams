@@ -85,18 +85,21 @@
                             {{ product.quantity }}
                         </td>
                         <td class="relative px-3 py-3">
-                            <button
-                                @click="toggle(product.id)"
-                                type="submit"
-                                :class="[
-                                    'flex items-center gap-2 rounded px-4 py-1 text-sm font-medium text-white',
-                                    product.disabledAt
-                                        ? 'bg-red-500 hover:bg-red-600'
-                                        : 'bg-green-500 hover:bg-green-600',
-                                ]"
-                            >
-                                {{ product.disabledAt ? 'Disabled' : 'Enabled' }}
-                            </button>
+                            <form :action="'http://dreams.test/admin/products/'+ product.id +'/toggle'" method="POST">
+                                <CsrfToken />
+                                <input type="hidden" name="_method" value="PATCH" />
+                                <button
+                                    type="submit"
+                                    :class="[
+                                        'flex items-center gap-2 rounded px-4 py-1 text-sm font-medium text-white',
+                                        product.disabled_at
+                                            ? 'bg-red-500 hover:bg-red-600'
+                                            : 'bg-green-500 hover:bg-green-600',
+                                    ]"
+                                >
+                                    {{ product.disabled_at ? 'Disabled' : 'Enabled' }}
+                                </button>
+                            </form>
                         </td>
                         <td class="relative px-3 py-3">
                             <a :href="`http://dreams.test/admin/products/${product.id}`">
@@ -179,11 +182,12 @@ export default {
             });
         };
         const toggle = (id) => {
-            axios.patch('http://dreams.test/api/products/' + id).then(() => {
+
+            axios.patch('http://dreams.test/admin/products/'+ id +'/toggle').then(() => {
                 getProducts();
             });
         };
-        return { products, links, destroy, goTo, toggle };
+        return { products, links, destroy, goTo, toggle, routes };
     },
 };
 </script>

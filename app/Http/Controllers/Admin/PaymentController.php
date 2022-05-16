@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\DTO\PaymentData;
 use App\Http\Controllers\Controller;
 use App\Models\Payment;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 

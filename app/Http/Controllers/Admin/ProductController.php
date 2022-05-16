@@ -19,16 +19,11 @@ class ProductController extends Controller
 
     public function create(): view
     {
-        $response = Http::get('dreams.test/api/products');
-        $products = $response->json();
         return view('admin.products.create');
     }
 
     public function store(StoreProductRequest $request): RedirectResponse
     {
-        $response = Http::get('dreams.test/api/products');
-        $products = $response->json();
-
         $product = new Product();
         if ($request->hasFile('photo')) {
             $file = $request->file('photo');
@@ -76,6 +71,6 @@ class ProductController extends Controller
 
         $product->save();
 
-        return response()->redirectToRoute('admin.product.index');
+        return response()->redirectToRoute('admin.products.index');
     }
 }
