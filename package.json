@@ -14,16 +14,16 @@
     "devDependencies": {
         "@headlessui/vue": "^1.4.3",
         "@heroicons/vue": "^1.0.5",
+        "@types/lodash": "^4.14.181",
+        "@vue/reactivity": "^3.2.31",
         "axios": "^0.21",
         "laravel-mix": "^6.0.6",
-        "lodash": "^4.17.19",
+        "lodash": "^4.17.21",
         "postcss": "^8.1.14",
         "prettier": "^2.5.1",
         "prettier-plugin-tailwindcss": "^0.1.4",
         "tailwindcss": "^3.0.17",
+        "vue": "^3.2.29",
         "vue-loader": "^17.0.0"
-    },
-    "dependencies": {
-        "vue": "^3.2.29"
     }
 }

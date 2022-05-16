@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <Menu as="div" class="relative inline-block text-left">
+    <div class="z-10">
+        <Menu as="div" class="relative z-10 inline-block text-left">
             <div>
                 <MenuButton>
                     <button>
@@ -36,6 +36,30 @@
                                 Profile
                             </a>
                         </MenuItem>
+                        <MenuItem v-slot="{ active }">
+                            <a
+                                :href="productsRoute"
+                                :class="[
+                                    active ? 'bg-zinc-800 text-white' : 'text-gray-900',
+                                    'group flex w-full items-center rounded-md px-2 py-2 text-sm',
+                                ]"
+                            >
+                                <ArchiveIcon :active="active" class="mr-2 h-5 w-5" aria-hidden="true" />
+                                Products
+                            </a>
+                        </MenuItem>
+                        <MenuItem v-slot="{ active }">
+                            <a
+                                :href="paymentsRoute"
+                                :class="[
+                                    active ? 'bg-zinc-800 text-white' : 'text-gray-900',
+                                    'group flex w-full items-center rounded-md px-2 py-2 text-sm',
+                                ]"
+                            >
+                                <ClockIcon :active="active" class="mr-2 h-5 w-5" aria-hidden="true" />
+                                Historial
+                            </a>
+                        </MenuItem>
                         <MenuItem v-if="panelRoute" v-slot="{ active }">
                             <a
                                 :href="panelRoute"
@@ -68,20 +92,32 @@
             </transition>
         </Menu>
     </div>
-    <form id="logout" class="hidden" :action="routes.logout.uri" method="POST"><CsrfToken /></form>
+    <form id="logout" class="hidden" action="http://dreams.test/logout" method="POST"><CsrfToken /></form>
+    <!--    <form id="logout" class="hidden" :action="routes.logout.uri" method="POST"><CsrfToken /></form>-->
 </template>
 
 <script>
 import CsrfToken from './helpers/CsrfToken';
 import { routes } from '../use';
 import { Menu, MenuButton, MenuItems, MenuItem } from '@headlessui/vue';
-import { ChevronDownIcon, LogoutIcon, UserCircleIcon, PresentationChartBarIcon, UserIcon } from '@heroicons/vue/solid';
+import {
+    ChevronDownIcon,
+    LogoutIcon,
+    UserCircleIcon,
+    PresentationChartBarIcon,
+    UserIcon,
+    ArchiveIcon,
+    BookOpenIcon,
+} from '@heroicons/vue/solid';
+import { ClockIcon } from '@heroicons/vue/outline';
 
 export default {
     props: {
         name: { type: String, required: true },
         profileRoute: { type: String, required: true },
+        productsRoute: { type: String, required: true },
         panelRoute: { type: String, required: true },
+        paymentsRoute: { type: String, required: true },
     },
     components: {
         Menu,
@@ -93,10 +129,12 @@ export default {
         UserCircleIcon,
         PresentationChartBarIcon,
         UserIcon,
+        ArchiveIcon,
+        BookOpenIcon,
+        ClockIcon,
         CsrfToken,
     },
     setup() {
-        console.log(routes.value);
         return { routes };
     },
 };

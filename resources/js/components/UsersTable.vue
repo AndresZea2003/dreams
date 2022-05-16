@@ -1,5 +1,5 @@
 <template>
-    <div class="mt-5 flex justify-center">
+    <div class="flex justify-center">
         <div>
             <table class="overflow-hidden rounded-lg border border-gray-600 shadow">
                 <thead class="bg-zinc-800">
@@ -107,11 +107,10 @@ export default {
     props: {
         users: { type: Array, required: true },
         current: { type: Number, required: true },
-        pagination: { type: Array, required: true },
+        // pagination: { type: Array, required: true },
     },
     setup(props) {
         const toggleStatus = (user) => {
-            console.log(user);
             axios.post(routes.value['user-status.toggle'].uri.replace('{user}', user.id));
         };
         return { toggleStatus, routes };
