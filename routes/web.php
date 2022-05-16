@@ -48,3 +48,5 @@ Route::post('/imports', [ImportController::class, 'import']);
 Route::view('/exports', 'exports')->name('exports');
 
 Route::get('/export-download', [ExportController::class, 'export'])->name('export-download');
+
+Route::post('/update-imports', [ImportController::class, 'updateImport'])->name('update-imports');

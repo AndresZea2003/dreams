@@ -16,6 +16,6 @@ class ProductSeeder extends Seeder
             'available' => 9,
         ]);
 
-        Product::factory(30)->create();
+        Product::factory(9)->create();
     }
 }

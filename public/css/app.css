@@ -900,9 +900,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
-.bg-pink-900{
+.bg-neutral-900{
   --tw-bg-opacity: 1;
-  background-color: rgb(131 24 67 / var(--tw-bg-opacity));
+  background-color: rgb(23 23 23 / var(--tw-bg-opacity));
 }
 .bg-gray-200{
   --tw-bg-opacity: 1;
@@ -923,10 +923,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-green-600{
   --tw-bg-opacity: 1;
   background-color: rgb(22 163 74 / var(--tw-bg-opacity));
-}
-.bg-neutral-900{
-  --tw-bg-opacity: 1;
-  background-color: rgb(23 23 23 / var(--tw-bg-opacity));
 }
 .bg-blue-600{
   --tw-bg-opacity: 1;
@@ -1016,6 +1012,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(17 24 39 / var(--tw-bg-opacity));
 }
+.bg-pink-900{
+  --tw-bg-opacity: 1;
+  background-color: rgb(131 24 67 / var(--tw-bg-opacity));
+}
 .bg-gray-800{
   --tw-bg-opacity: 1;
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));
@@ -1038,6 +1038,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .bg-zinc-600{
   --tw-bg-opacity: 1;
   background-color: rgb(82 82 91 / var(--tw-bg-opacity));
+}
+.bg-gray-500{
+  --tw-bg-opacity: 1;
+  background-color: rgb(107 114 128 / var(--tw-bg-opacity));
 }
 .bg-\[url\(\'https\:\/\/images\.pexels\.com\/photos\/1536286\/pexels-photo-1536286\.jpeg\?auto\=compress\&cs\=tinysrgb\&dpr\=2\&h\=750\&w\=1260\'\)\]{
   background-image: url('https://images.pexels.com/photos/1536286/pexels-photo-1536286.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
@@ -1139,6 +1143,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .px-20{
   padding-left: 5rem;
   padding-right: 5rem;
+}
+.px-48{
+  padding-left: 12rem;
+  padding-right: 12rem;
 }
 .pt-10{
   padding-top: 2.5rem;
@@ -1345,6 +1353,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-green-200{
   --tw-text-opacity: 1;
   color: rgb(187 247 208 / var(--tw-text-opacity));
+}
+.text-blue-600{
+  --tw-text-opacity: 1;
+  color: rgb(37 99 235 / var(--tw-text-opacity));
 }
 .opacity-0{
   opacity: 0;
@@ -2202,6 +2214,11 @@ buttonSend:active {
 .hover\:text-black:hover{
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+.hover\:text-blue-600:hover{
+  --tw-text-opacity: 1;
+  color: rgb(37 99 235 / var(--tw-text-opacity));
 }
 
 .hover\:opacity-80:hover{

@@ -6,9 +6,10 @@ use App\Models\Product;
 use Illuminate\Validation\Rule;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
+use Maatwebsite\Excel\Concerns\WithUpserts;
 use Maatwebsite\Excel\Concerns\WithValidation;
 
-class ProductImport implements ToModel, WithHeadingRow, WithValidation
+class ProductImport implements ToModel, WithHeadingRow, WithValidation, WithUpserts
 {
     public function model(array $row)
     {
@@ -29,5 +30,10 @@ class ProductImport implements ToModel, WithHeadingRow, WithValidation
             'price' => 'required|alpha_num|integer',
             'available' => 'required|integer',
         ];
+    }
+
+    public function uniqueBy()
+    {
+        return 'name';
     }
 }
